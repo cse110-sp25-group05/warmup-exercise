@@ -1,10 +1,20 @@
-/* html {
-    background-color: aquamarine;
-} */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+* {
+  --main-font: "DM Sans";
+}
+
+html {
+  background-image: url("assets/background.png");
+}
 
 div {
   width: auto;
   height: auto;
+}
+
+body {
+  font-family: var(--main-font, sans-serif);
 }
 
 #player-hand {
@@ -22,6 +32,6 @@ section#dealer-hand > div {
 section#deck-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 20px;
 }
