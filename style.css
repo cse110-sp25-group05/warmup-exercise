@@ -1,0 +1,27 @@
+/* html {
+    background-color: aquamarine;
+} */
+
+div {
+  width: auto;
+  height: auto;
+}
+
+#player-hand {
+  margin-top: 2rem;
+}
+
+section#player-hand > div,
+section#dealer-hand > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+section#deck-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+}

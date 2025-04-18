@@ -1,38 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blackjack Card Widget</title>
-</head>
-<h1>Blackjack Demo</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="card.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Blackjack Card Widget</title>
+  </head>
+  <body>
+    <h1>Blackjack Demo</h1>
 
-<section id="deck-container">
-<!--JS team-->
-<div class="card" data-rank="A" data-suit="spades">🂡</div>
-<div class="card" data-rank="K" data-suit="hearts">🂾</div>
-</section>
+    <section id="deck-container">
+      <!--JS team-->
+      <div class="card" data-rank="A" data-suit="spades">🂡</div>
+      <div class="card" data-rank="K" data-suit="hearts">🂾</div>
+    </section>
 
+    <section id="dealer-hand">
+      <!-- Cards will be added here -->
+      <div>
+        <h2>Dealer Hand</h2>
+        <div class="card-front" data-rank="1" data-suit="spades"></div>
+        <div class="card-front" data-rank="1" data-suit="spades"></div>
+      </div>
+    </section>
 
+    <section id="player-hand">
+      <!-- Cards will be added here -->
+      <div>
+        <h2>Player Hand</h2>
+        <div class="card-front" data-rank="1" data-suit="diamond">
+          <div class="card-front-top">
+            <div>
+              <div class="card-rank">1</div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="19"
+                height="24"
+                viewBox="0 0 19 24"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M8.22638 0.868763C8.38448 0.668964 8.58591 0.507491 8.81555 0.396475C9.04519 0.285458 9.29707 0.227783 9.55226 0.227783C9.80746 0.227783 10.0593 0.285458 10.289 0.396475C10.5186 0.507491 10.72 0.668964 10.8781 0.868763L18.3132 10.2663C18.6268 10.6627 18.7974 11.1529 18.7974 11.6578C18.7974 12.1627 18.6268 12.6529 18.3132 13.0492L10.8781 22.4468C10.7201 22.6468 10.5186 22.8084 10.2888 22.9196C10.0591 23.0307 9.80705 23.0885 9.5517 23.0885C9.29635 23.0885 9.04432 23.0307 8.81458 22.9196C8.58483 22.8084 8.38334 22.6468 8.22526 22.4468L0.791322 13.0503C0.477702 12.654 0.307129 12.1638 0.307129 11.6589C0.307129 11.154 0.477702 10.6638 0.791322 10.2675L8.22638 0.869886V0.868763Z"
+                  fill="url(#paint0_linear_19_300)"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_19_300"
+                    x1="9.55226"
+                    y1="0.227783"
+                    x2="9.55226"
+                    y2="23.0885"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop offset="0.528846" stop-color="#212121" />
+                    <stop offset="1" stop-color="#878787" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <!-- <div class="card-suit"></div> -->
+            </div>
+          </div>
+          <div class="card-front-middle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="70"
+              height="87"
+              viewBox="0 0 70 87"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M30.0796 2.9423C30.6746 2.18718 31.4327 1.57691 32.297 1.15733C33.1613 0.737751 34.1093 0.519775 35.0697 0.519775C36.0302 0.519775 36.9782 0.737751 37.8425 1.15733C38.7067 1.57691 39.4649 2.18718 40.0599 2.9423L68.0427 38.4596C69.2231 39.9576 69.8651 41.8102 69.8651 43.7184C69.8651 45.6267 69.2231 47.4793 68.0427 48.9772L40.0599 84.4945C39.4649 85.2504 38.7066 85.8614 37.8419 86.2814C36.9772 86.7015 36.0287 86.9197 35.0676 86.9197C34.1066 86.9197 33.158 86.7015 32.2934 86.2814C31.4287 85.8614 30.6703 85.2504 30.0754 84.4945L2.09674 48.9815C0.916388 47.4835 0.274414 45.6309 0.274414 43.7227C0.274414 41.8144 0.916388 39.9618 2.09674 38.4638L30.0796 2.94655V2.9423Z"
+                fill="url(#paint0_linear_14_1614)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_14_1614"
+                  x1="35.0697"
+                  y1="0.519775"
+                  x2="35.0697"
+                  y2="86.9198"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.528846" stop-color="#212121" />
+                  <stop offset="1" stop-color="#878787" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="card-suit"></div>
+          </div>
+          <div class="card-front-bottom">
+            <div>
+              <div class="card-suit">1</div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="19"
+                height="24"
+                viewBox="0 0 19 24"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M8.22638 0.868763C8.38448 0.668964 8.58591 0.507491 8.81555 0.396475C9.04519 0.285458 9.29707 0.227783 9.55226 0.227783C9.80746 0.227783 10.0593 0.285458 10.289 0.396475C10.5186 0.507491 10.72 0.668964 10.8781 0.868763L18.3132 10.2663C18.6268 10.6627 18.7974 11.1529 18.7974 11.6578C18.7974 12.1627 18.6268 12.6529 18.3132 13.0492L10.8781 22.4468C10.7201 22.6468 10.5186 22.8084 10.2888 22.9196C10.0591 23.0307 9.80705 23.0885 9.5517 23.0885C9.29635 23.0885 9.04432 23.0307 8.81458 22.9196C8.58483 22.8084 8.38334 22.6468 8.22526 22.4468L0.791322 13.0503C0.477702 12.654 0.307129 12.1638 0.307129 11.6589C0.307129 11.154 0.477702 10.6638 0.791322 10.2675L8.22638 0.869886V0.868763Z"
+                  fill="url(#paint0_linear_19_300)"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_19_300"
+                    x1="9.55226"
+                    y1="0.227783"
+                    x2="9.55226"
+                    y2="23.0885"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop offset="0.528846" stop-color="#212121" />
+                    <stop offset="1" stop-color="#878787" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="card-front" data-rank="1" data-suit="diamond"></div>
+      </div>
 
-<section id="player-hand">
-  <h2>Player Hand</h2>
-  <!-- Cards will be added here -->
-  <div class="card" data-rank="A" data-suit="spades">🂡</div>
-  <div class="card" data-rank="K" data-suit="hearts">🂾</div>
-</section>
+      <!-- <div class="card-front" data-rank="K" data-suit="hearts"></div> -->
+    </section>
 
-<section id="dealer-hand">
-  <h2>Dealer Hand</h2>
-  <!-- Cards will be added here -->
-</section>
+    <section id="controls">
+      <button id="deal-button">Deal</button>
+      <button id="hit-button">Hit</button>
+      <button id="stand-button">Stand</button>
+    </section>
 
-<section id="controls">
-  <button id="deal-button">Deal</button>
-  <button id="hit-button">Hit</button>
-  <button id="stand-button">Stand</button>
-</section>
-
-<script src="./script.js" type="module"></script>
-</body>
+    <script src="./script.js" type="module"></script>
+  </body>
 </html>
