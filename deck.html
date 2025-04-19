@@ -8,108 +8,116 @@
     <title>Blackjack Card Widget</title>
   </head>
   <body>
-    <h1 style="text-align: center;">Card Deck</h1>
+    <h1 style="text-align: center">Card Deck</h1>
 
     <section id="deck-container">
       <!-- Rank 1, Diamond -->
-      <div class="card-front" data-rank="1" data-suit="diamond">
-        <div class="card-front-top">
-          <div>
-            <div class="card-rank">1</div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="19"
-              height="24"
-              viewBox="0 0 19 24"
-              fill="none"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M8.22638 0.868763C8.38448 0.668964 8.58591 0.507491 8.81555 0.396475C9.04519 0.285458 9.29707 0.227783 9.55226 0.227783C9.80746 0.227783 10.0593 0.285458 10.289 0.396475C10.5186 0.507491 10.72 0.668964 10.8781 0.868763L18.3132 10.2663C18.6268 10.6627 18.7974 11.1529 18.7974 11.6578C18.7974 12.1627 18.6268 12.6529 18.3132 13.0492L10.8781 22.4468C10.7201 22.6468 10.5186 22.8084 10.2888 22.9196C10.0591 23.0307 9.80705 23.0885 9.5517 23.0885C9.29635 23.0885 9.04432 23.0307 8.81458 22.9196C8.58483 22.8084 8.38334 22.6468 8.22526 22.4468L0.791322 13.0503C0.477702 12.654 0.307129 12.1638 0.307129 11.6589C0.307129 11.154 0.477702 10.6638 0.791322 10.2675L8.22638 0.869886V0.868763Z"
-                fill="url(#paint0_linear_19_300)"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_19_300"
-                  x1="9.55226"
-                  y1="0.227783"
-                  x2="9.55226"
-                  y2="23.0885"
-                  gradientUnits="userSpaceOnUse"
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front-black" data-rank="1" data-suit="diamond">
+            <div class="card-front-top">
+              <div>
+                <div class="card-rank">A</div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="19"
+                  height="24"
+                  viewBox="0 0 19 24"
+                  fill="none"
                 >
-                  <stop offset="0.528846" stop-color="#212121" />
-                  <stop offset="1" stop-color="#878787" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-        </div>
-        <div class="card-front-middle">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="70"
-            height="87"
-            viewBox="0 0 70 87"
-            fill="none"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M30.0796 2.9423C30.6746 2.18718 31.4327 1.57691 32.297 1.15733C33.1613 0.737751 34.1093 0.519775 35.0697 0.519775C36.0302 0.519775 36.9782 0.737751 37.8425 1.15733C38.7067 1.57691 39.4649 2.18718 40.0599 2.9423L68.0427 38.4596C69.2231 39.9576 69.8651 41.8102 69.8651 43.7184C69.8651 45.6267 69.2231 47.4793 68.0427 48.9772L40.0599 84.4945C39.4649 85.2504 38.7066 85.8614 37.8419 86.2814C36.9772 86.7015 36.0287 86.9197 35.0676 86.9197C34.1066 86.9197 33.158 86.7015 32.2934 86.2814C31.4287 85.8614 30.6703 85.2504 30.0754 84.4945L2.09674 48.9815C0.916388 47.4835 0.274414 45.6309 0.274414 43.7227C0.274414 41.8144 0.916388 39.9618 2.09674 38.4638L30.0796 2.94655V2.9423Z"
-              fill="url(#paint0_linear_14_1614)"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_14_1614"
-                x1="35.0697"
-                y1="0.519775"
-                x2="35.0697"
-                y2="86.9198"
-                gradientUnits="userSpaceOnUse"
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M8.22638 0.868763C8.38448 0.668964 8.58591 0.507491 8.81555 0.396475C9.04519 0.285458 9.29707 0.227783 9.55226 0.227783C9.80746 0.227783 10.0593 0.285458 10.289 0.396475C10.5186 0.507491 10.72 0.668964 10.8781 0.868763L18.3132 10.2663C18.6268 10.6627 18.7974 11.1529 18.7974 11.6578C18.7974 12.1627 18.6268 12.6529 18.3132 13.0492L10.8781 22.4468C10.7201 22.6468 10.5186 22.8084 10.2888 22.9196C10.0591 23.0307 9.80705 23.0885 9.5517 23.0885C9.29635 23.0885 9.04432 23.0307 8.81458 22.9196C8.58483 22.8084 8.38334 22.6468 8.22526 22.4468L0.791322 13.0503C0.477702 12.654 0.307129 12.1638 0.307129 11.6589C0.307129 11.154 0.477702 10.6638 0.791322 10.2675L8.22638 0.869886V0.868763Z"
+                    fill="url(#paint0_linear_19_300)"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_19_300"
+                      x1="9.55226"
+                      y1="0.227783"
+                      x2="9.55226"
+                      y2="23.0885"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset="0.528846" stop-color="#212121" />
+                      <stop offset="1" stop-color="#878787" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            <div class="card-front-middle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="70"
+                height="87"
+                viewBox="0 0 70 87"
+                fill="none"
               >
-                <stop offset="0.528846" stop-color="#212121" />
-                <stop offset="1" stop-color="#878787" />
-              </linearGradient>
-            </defs>
-          </svg>
-          <div class="card-suit"></div>
-        </div>
-        <div class="card-front-bottom">
-          <div>
-            <div class="card-suit">1</div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="19"
-              height="24"
-              viewBox="0 0 19 24"
-              fill="none"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M8.22638 0.868763C8.38448 0.668964 8.58591 0.507491 8.81555 0.396475C9.04519 0.285458 9.29707 0.227783 9.55226 0.227783C9.80746 0.227783 10.0593 0.285458 10.289 0.396475C10.5186 0.507491 10.72 0.668964 10.8781 0.868763L18.3132 10.2663C18.6268 10.6627 18.7974 11.1529 18.7974 11.6578C18.7974 12.1627 18.6268 12.6529 18.3132 13.0492L10.8781 22.4468C10.7201 22.6468 10.5186 22.8084 10.2888 22.9196C10.0591 23.0307 9.80705 23.0885 9.5517 23.0885C9.29635 23.0885 9.04432 23.0307 8.81458 22.9196C8.58483 22.8084 8.38334 22.6468 8.22526 22.4468L0.791322 13.0503C0.477702 12.654 0.307129 12.1638 0.307129 11.6589C0.307129 11.154 0.477702 10.6638 0.791322 10.2675L8.22638 0.869886V0.868763Z"
-                fill="url(#paint0_linear_19_300)"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_19_300"
-                  x1="9.55226"
-                  y1="0.227783"
-                  x2="9.55226"
-                  y2="23.0885"
-                  gradientUnits="userSpaceOnUse"
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M30.0796 2.9423C30.6746 2.18718 31.4327 1.57691 32.297 1.15733C33.1613 0.737751 34.1093 0.519775 35.0697 0.519775C36.0302 0.519775 36.9782 0.737751 37.8425 1.15733C38.7067 1.57691 39.4649 2.18718 40.0599 2.9423L68.0427 38.4596C69.2231 39.9576 69.8651 41.8102 69.8651 43.7184C69.8651 45.6267 69.2231 47.4793 68.0427 48.9772L40.0599 84.4945C39.4649 85.2504 38.7066 85.8614 37.8419 86.2814C36.9772 86.7015 36.0287 86.9197 35.0676 86.9197C34.1066 86.9197 33.158 86.7015 32.2934 86.2814C31.4287 85.8614 30.6703 85.2504 30.0754 84.4945L2.09674 48.9815C0.916388 47.4835 0.274414 45.6309 0.274414 43.7227C0.274414 41.8144 0.916388 39.9618 2.09674 38.4638L30.0796 2.94655V2.9423Z"
+                  fill="url(#paint0_linear_14_1614)"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_14_1614"
+                    x1="35.0697"
+                    y1="0.519775"
+                    x2="35.0697"
+                    y2="86.9198"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop offset="0.528846" stop-color="#212121" />
+                    <stop offset="1" stop-color="#878787" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="card-suit"></div>
+            </div>
+            <div class="card-front-bottom">
+              <div>
+                <div class="card-suit">A</div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="19"
+                  height="24"
+                  viewBox="0 0 19 24"
+                  fill="none"
                 >
-                  <stop offset="0.528846" stop-color="#212121" />
-                  <stop offset="1" stop-color="#878787" />
-                </linearGradient>
-              </defs>
-            </svg>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M8.22638 0.868763C8.38448 0.668964 8.58591 0.507491 8.81555 0.396475C9.04519 0.285458 9.29707 0.227783 9.55226 0.227783C9.80746 0.227783 10.0593 0.285458 10.289 0.396475C10.5186 0.507491 10.72 0.668964 10.8781 0.868763L18.3132 10.2663C18.6268 10.6627 18.7974 11.1529 18.7974 11.6578C18.7974 12.1627 18.6268 12.6529 18.3132 13.0492L10.8781 22.4468C10.7201 22.6468 10.5186 22.8084 10.2888 22.9196C10.0591 23.0307 9.80705 23.0885 9.5517 23.0885C9.29635 23.0885 9.04432 23.0307 8.81458 22.9196C8.58483 22.8084 8.38334 22.6468 8.22526 22.4468L0.791322 13.0503C0.477702 12.654 0.307129 12.1638 0.307129 11.6589C0.307129 11.154 0.477702 10.6638 0.791322 10.2675L8.22638 0.869886V0.868763Z"
+                    fill="url(#paint0_linear_19_300)"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_19_300"
+                      x1="9.55226"
+                      y1="0.227783"
+                      x2="9.55226"
+                      y2="23.0885"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset="0.528846" stop-color="#212121" />
+                      <stop offset="1" stop-color="#878787" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-back">
+            <div></div>
           </div>
         </div>
       </div>
+
       <!-- Rank 2, Diamond -->
-      <div class="card-front" data-rank="2" data-suit="diamond">
+      <div class="card-front-black" data-rank="2" data-suit="diamond">
         <div class="card-front-top">
           <div>
             <div class="card-rank">2</div>
@@ -206,7 +214,7 @@
         </div>
       </div>
       <!-- Rank 3, Diamond -->
-      <div class="card-front" data-rank="3" data-suit="diamond">
+      <div class="card-front-black" data-rank="3" data-suit="diamond">
         <div class="card-front-top">
           <div>
             <div class="card-rank">3</div>
@@ -303,7 +311,7 @@
         </div>
       </div>
       <!-- Rank 4, Diamond -->
-      <div class="card-front" data-rank="4" data-suit="diamond">
+      <div class="card-front-black" data-rank="4" data-suit="diamond">
         <div class="card-front-top">
           <div>
             <div class="card-rank">4</div>
@@ -400,7 +408,7 @@
         </div>
       </div>
       <!-- Rank 5, Diamond -->
-      <div class="card-front" data-rank="5" data-suit="diamond">
+      <div class="card-front-black" data-rank="5" data-suit="diamond">
         <div class="card-front-top">
           <div>
             <div class="card-rank">5</div>
@@ -497,7 +505,7 @@
         </div>
       </div>
       <!-- Rank 6, Diamond -->
-      <div class="card-front" data-rank="6" data-suit="diamond">
+      <div class="card-front-black" data-rank="6" data-suit="diamond">
         <div class="card-front-top">
           <div>
             <div class="card-rank">6</div>
@@ -594,7 +602,7 @@
         </div>
       </div>
       <!-- Rank 7, Diamond -->
-      <div class="card-front" data-rank="7" data-suit="diamond">
+      <div class="card-front-black" data-rank="7" data-suit="diamond">
         <div class="card-front-top">
           <div>
             <div class="card-rank">7</div>
@@ -691,7 +699,7 @@
         </div>
       </div>
       <!-- Rank 8, Diamond -->
-      <div class="card-front" data-rank="8" data-suit="diamond">
+      <div class="card-front-black" data-rank="8" data-suit="diamond">
         <div class="card-front-top">
           <div>
             <div class="card-rank">8</div>
@@ -788,7 +796,7 @@
         </div>
       </div>
       <!-- Rank 9, Diamond -->
-      <div class="card-front" data-rank="9" data-suit="diamond">
+      <div class="card-front-black" data-rank="9" data-suit="diamond">
         <div class="card-front-top">
           <div>
             <div class="card-rank">9</div>
@@ -885,7 +893,7 @@
         </div>
       </div>
       <!-- Rank 10, Diamond -->
-      <div class="card-front" data-rank="10" data-suit="diamond">
+      <div class="card-front-black" data-rank="10" data-suit="diamond">
         <div class="card-front-top">
           <div>
             <div class="card-rank">10</div>
@@ -982,7 +990,7 @@
         </div>
       </div>
       <!-- Rank J, Diamond -->
-      <div class="card-front" data-rank="J" data-suit="diamond">
+      <div class="card-front-black" data-rank="J" data-suit="diamond">
         <div class="card-front-top">
           <div>
             <div class="card-rank">J</div>
@@ -1079,7 +1087,7 @@
         </div>
       </div>
       <!-- Rank Q, Diamond -->
-      <div class="card-front" data-rank="Q" data-suit="diamond">
+      <div class="card-front-black" data-rank="Q" data-suit="diamond">
         <div class="card-front-top">
           <div>
             <div class="card-rank">Q</div>
@@ -1176,7 +1184,7 @@
         </div>
       </div>
       <!-- Rank K, Diamond -->
-      <div class="card-front" data-rank="K" data-suit="diamond">
+      <div class="card-front-black" data-rank="K" data-suit="diamond">
         <div class="card-front-top">
           <div>
             <div class="card-rank">K</div>
@@ -1272,8 +1280,979 @@
           </div>
         </div>
       </div>
+      <!-- Rank 1, Diamond, Red -->
+      <div class="card-front-red" data-rank="1" data-suit="diamond">
+        <div class="card-front-top">
+          <div>
+            <div class="card-rank">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8.50666 1.36473C8.66475 1.16494 8.86618 1.00346 9.09582 0.892446C9.32546 0.781429 9.57734 0.723755 9.83254 0.723755C10.0877 0.723755 10.3396 0.781429 10.5693 0.892446C10.7989 1.00346 11.0003 1.16494 11.1584 1.36473L18.5935 10.7623C18.9071 11.1587 19.0777 11.6488 19.0777 12.1537C19.0777 12.6587 18.9071 13.1488 18.5935 13.5452L11.1584 22.9428C11.0003 23.1428 10.7988 23.3044 10.5691 23.4156C10.3393 23.5267 10.0873 23.5844 9.83197 23.5844C9.57662 23.5844 9.3246 23.5267 9.09485 23.4156C8.8651 23.3044 8.66361 23.1428 8.50553 22.9428L1.0716 13.5463C0.757975 13.15 0.587402 12.6598 0.587402 12.1549C0.587402 11.65 0.757975 11.1598 1.0716 10.7634L8.50666 1.36586V1.36473Z"
+                fill="url(#paint0_linear_22_280)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_280"
+                  x1="9.83254"
+                  y1="0.723755"
+                  x2="9.83254"
+                  y2="23.5844"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div class="card-front-middle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="87"
+            viewBox="0 0 70 87"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M30.2197 2.9423C30.8147 2.18718 31.5729 1.57691 32.4371 1.15733C33.3014 0.737751 34.2494 0.519775 35.2099 0.519775C36.1703 0.519775 37.1183 0.737751 37.9826 1.15733C38.8469 1.57691 39.605 2.18718 40.2 2.9423L68.1829 38.4596C69.3632 39.9576 70.0052 41.8102 70.0052 43.7184C70.0052 45.6267 69.3632 47.4793 68.1829 48.9772L40.2 84.4945C39.6051 85.2504 38.8467 85.8614 37.982 86.2814C37.1173 86.7015 36.1688 86.9197 35.2078 86.9197C34.2467 86.9197 33.2982 86.7015 32.4335 86.2814C31.5688 85.8614 30.8105 85.2504 30.2155 84.4945L2.23688 48.9815C1.05653 47.4835 0.414551 45.6309 0.414551 43.7227C0.414551 41.8144 1.05653 39.9618 2.23688 38.4638L30.2197 2.94655V2.9423Z"
+              fill="url(#paint0_linear_20_357)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_20_357"
+                x1="35.2099"
+                y1="0.519775"
+                x2="35.2099"
+                y2="86.9198"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0.509615" stop-color="#D32F2F" />
+                <stop offset="1" stop-color="#9C2323" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="card-suit"></div>
+        </div>
+        <div class="card-front-bottom">
+          <div>
+            <div class="card-suit">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.0959 22.401C10.9378 22.6008 10.7364 22.7623 10.5067 22.8733C10.2771 22.9843 10.0252 23.042 9.77 23.042C9.51481 23.042 9.26293 22.9843 9.03329 22.8733C8.80365 22.7623 8.60222 22.6008 8.44412 22.401L1.00906 13.0034C0.695442 12.6071 0.52487 12.1169 0.52487 11.612C0.52487 11.1071 0.695442 10.6169 1.00906 10.2206L8.44412 0.822992C8.6022 0.622987 8.80369 0.461333 9.03344 0.350187C9.26319 0.239042 9.51522 0.181298 9.77057 0.181298C10.0259 0.181298 10.2779 0.239042 10.5077 0.350187C10.7374 0.461333 10.9389 0.622987 11.097 0.822992L18.5309 10.2194C18.8446 10.6158 19.0151 11.106 19.0151 11.6109C19.0151 12.1158 18.8446 12.606 18.5309 13.0023L11.0959 22.3999V22.401Z"
+                fill="url(#paint0_linear_22_276)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_276"
+                  x1="9.77"
+                  y1="23.042"
+                  x2="9.77"
+                  y2="0.181297"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- Rank 1, Diamond, Red -->
+      <div class="card-front-red" data-rank="1" data-suit="diamond">
+        <div class="card-front-top">
+          <div>
+            <div class="card-rank">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8.50666 1.36473C8.66475 1.16494 8.86618 1.00346 9.09582 0.892446C9.32546 0.781429 9.57734 0.723755 9.83254 0.723755C10.0877 0.723755 10.3396 0.781429 10.5693 0.892446C10.7989 1.00346 11.0003 1.16494 11.1584 1.36473L18.5935 10.7623C18.9071 11.1587 19.0777 11.6488 19.0777 12.1537C19.0777 12.6587 18.9071 13.1488 18.5935 13.5452L11.1584 22.9428C11.0003 23.1428 10.7988 23.3044 10.5691 23.4156C10.3393 23.5267 10.0873 23.5844 9.83197 23.5844C9.57662 23.5844 9.3246 23.5267 9.09485 23.4156C8.8651 23.3044 8.66361 23.1428 8.50553 22.9428L1.0716 13.5463C0.757975 13.15 0.587402 12.6598 0.587402 12.1549C0.587402 11.65 0.757975 11.1598 1.0716 10.7634L8.50666 1.36586V1.36473Z"
+                fill="url(#paint0_linear_22_280)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_280"
+                  x1="9.83254"
+                  y1="0.723755"
+                  x2="9.83254"
+                  y2="23.5844"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div class="card-front-middle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="87"
+            viewBox="0 0 70 87"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M30.2197 2.9423C30.8147 2.18718 31.5729 1.57691 32.4371 1.15733C33.3014 0.737751 34.2494 0.519775 35.2099 0.519775C36.1703 0.519775 37.1183 0.737751 37.9826 1.15733C38.8469 1.57691 39.605 2.18718 40.2 2.9423L68.1829 38.4596C69.3632 39.9576 70.0052 41.8102 70.0052 43.7184C70.0052 45.6267 69.3632 47.4793 68.1829 48.9772L40.2 84.4945C39.6051 85.2504 38.8467 85.8614 37.982 86.2814C37.1173 86.7015 36.1688 86.9197 35.2078 86.9197C34.2467 86.9197 33.2982 86.7015 32.4335 86.2814C31.5688 85.8614 30.8105 85.2504 30.2155 84.4945L2.23688 48.9815C1.05653 47.4835 0.414551 45.6309 0.414551 43.7227C0.414551 41.8144 1.05653 39.9618 2.23688 38.4638L30.2197 2.94655V2.9423Z"
+              fill="url(#paint0_linear_20_357)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_20_357"
+                x1="35.2099"
+                y1="0.519775"
+                x2="35.2099"
+                y2="86.9198"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0.509615" stop-color="#D32F2F" />
+                <stop offset="1" stop-color="#9C2323" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="card-suit"></div>
+        </div>
+        <div class="card-front-bottom">
+          <div>
+            <div class="card-suit">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.0959 22.401C10.9378 22.6008 10.7364 22.7623 10.5067 22.8733C10.2771 22.9843 10.0252 23.042 9.77 23.042C9.51481 23.042 9.26293 22.9843 9.03329 22.8733C8.80365 22.7623 8.60222 22.6008 8.44412 22.401L1.00906 13.0034C0.695442 12.6071 0.52487 12.1169 0.52487 11.612C0.52487 11.1071 0.695442 10.6169 1.00906 10.2206L8.44412 0.822992C8.6022 0.622987 8.80369 0.461333 9.03344 0.350187C9.26319 0.239042 9.51522 0.181298 9.77057 0.181298C10.0259 0.181298 10.2779 0.239042 10.5077 0.350187C10.7374 0.461333 10.9389 0.622987 11.097 0.822992L18.5309 10.2194C18.8446 10.6158 19.0151 11.106 19.0151 11.6109C19.0151 12.1158 18.8446 12.606 18.5309 13.0023L11.0959 22.3999V22.401Z"
+                fill="url(#paint0_linear_22_276)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_276"
+                  x1="9.77"
+                  y1="23.042"
+                  x2="9.77"
+                  y2="0.181297"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- Rank 1, Diamond, Red -->
+      <div class="card-front-red" data-rank="1" data-suit="diamond">
+        <div class="card-front-top">
+          <div>
+            <div class="card-rank">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8.50666 1.36473C8.66475 1.16494 8.86618 1.00346 9.09582 0.892446C9.32546 0.781429 9.57734 0.723755 9.83254 0.723755C10.0877 0.723755 10.3396 0.781429 10.5693 0.892446C10.7989 1.00346 11.0003 1.16494 11.1584 1.36473L18.5935 10.7623C18.9071 11.1587 19.0777 11.6488 19.0777 12.1537C19.0777 12.6587 18.9071 13.1488 18.5935 13.5452L11.1584 22.9428C11.0003 23.1428 10.7988 23.3044 10.5691 23.4156C10.3393 23.5267 10.0873 23.5844 9.83197 23.5844C9.57662 23.5844 9.3246 23.5267 9.09485 23.4156C8.8651 23.3044 8.66361 23.1428 8.50553 22.9428L1.0716 13.5463C0.757975 13.15 0.587402 12.6598 0.587402 12.1549C0.587402 11.65 0.757975 11.1598 1.0716 10.7634L8.50666 1.36586V1.36473Z"
+                fill="url(#paint0_linear_22_280)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_280"
+                  x1="9.83254"
+                  y1="0.723755"
+                  x2="9.83254"
+                  y2="23.5844"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div class="card-front-middle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="87"
+            viewBox="0 0 70 87"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M30.2197 2.9423C30.8147 2.18718 31.5729 1.57691 32.4371 1.15733C33.3014 0.737751 34.2494 0.519775 35.2099 0.519775C36.1703 0.519775 37.1183 0.737751 37.9826 1.15733C38.8469 1.57691 39.605 2.18718 40.2 2.9423L68.1829 38.4596C69.3632 39.9576 70.0052 41.8102 70.0052 43.7184C70.0052 45.6267 69.3632 47.4793 68.1829 48.9772L40.2 84.4945C39.6051 85.2504 38.8467 85.8614 37.982 86.2814C37.1173 86.7015 36.1688 86.9197 35.2078 86.9197C34.2467 86.9197 33.2982 86.7015 32.4335 86.2814C31.5688 85.8614 30.8105 85.2504 30.2155 84.4945L2.23688 48.9815C1.05653 47.4835 0.414551 45.6309 0.414551 43.7227C0.414551 41.8144 1.05653 39.9618 2.23688 38.4638L30.2197 2.94655V2.9423Z"
+              fill="url(#paint0_linear_20_357)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_20_357"
+                x1="35.2099"
+                y1="0.519775"
+                x2="35.2099"
+                y2="86.9198"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0.509615" stop-color="#D32F2F" />
+                <stop offset="1" stop-color="#9C2323" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="card-suit"></div>
+        </div>
+        <div class="card-front-bottom">
+          <div>
+            <div class="card-suit">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.0959 22.401C10.9378 22.6008 10.7364 22.7623 10.5067 22.8733C10.2771 22.9843 10.0252 23.042 9.77 23.042C9.51481 23.042 9.26293 22.9843 9.03329 22.8733C8.80365 22.7623 8.60222 22.6008 8.44412 22.401L1.00906 13.0034C0.695442 12.6071 0.52487 12.1169 0.52487 11.612C0.52487 11.1071 0.695442 10.6169 1.00906 10.2206L8.44412 0.822992C8.6022 0.622987 8.80369 0.461333 9.03344 0.350187C9.26319 0.239042 9.51522 0.181298 9.77057 0.181298C10.0259 0.181298 10.2779 0.239042 10.5077 0.350187C10.7374 0.461333 10.9389 0.622987 11.097 0.822992L18.5309 10.2194C18.8446 10.6158 19.0151 11.106 19.0151 11.6109C19.0151 12.1158 18.8446 12.606 18.5309 13.0023L11.0959 22.3999V22.401Z"
+                fill="url(#paint0_linear_22_276)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_276"
+                  x1="9.77"
+                  y1="23.042"
+                  x2="9.77"
+                  y2="0.181297"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- Rank 1, Diamond, Red -->
+      <div class="card-front-red" data-rank="1" data-suit="diamond">
+        <div class="card-front-top">
+          <div>
+            <div class="card-rank">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8.50666 1.36473C8.66475 1.16494 8.86618 1.00346 9.09582 0.892446C9.32546 0.781429 9.57734 0.723755 9.83254 0.723755C10.0877 0.723755 10.3396 0.781429 10.5693 0.892446C10.7989 1.00346 11.0003 1.16494 11.1584 1.36473L18.5935 10.7623C18.9071 11.1587 19.0777 11.6488 19.0777 12.1537C19.0777 12.6587 18.9071 13.1488 18.5935 13.5452L11.1584 22.9428C11.0003 23.1428 10.7988 23.3044 10.5691 23.4156C10.3393 23.5267 10.0873 23.5844 9.83197 23.5844C9.57662 23.5844 9.3246 23.5267 9.09485 23.4156C8.8651 23.3044 8.66361 23.1428 8.50553 22.9428L1.0716 13.5463C0.757975 13.15 0.587402 12.6598 0.587402 12.1549C0.587402 11.65 0.757975 11.1598 1.0716 10.7634L8.50666 1.36586V1.36473Z"
+                fill="url(#paint0_linear_22_280)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_280"
+                  x1="9.83254"
+                  y1="0.723755"
+                  x2="9.83254"
+                  y2="23.5844"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div class="card-front-middle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="87"
+            viewBox="0 0 70 87"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M30.2197 2.9423C30.8147 2.18718 31.5729 1.57691 32.4371 1.15733C33.3014 0.737751 34.2494 0.519775 35.2099 0.519775C36.1703 0.519775 37.1183 0.737751 37.9826 1.15733C38.8469 1.57691 39.605 2.18718 40.2 2.9423L68.1829 38.4596C69.3632 39.9576 70.0052 41.8102 70.0052 43.7184C70.0052 45.6267 69.3632 47.4793 68.1829 48.9772L40.2 84.4945C39.6051 85.2504 38.8467 85.8614 37.982 86.2814C37.1173 86.7015 36.1688 86.9197 35.2078 86.9197C34.2467 86.9197 33.2982 86.7015 32.4335 86.2814C31.5688 85.8614 30.8105 85.2504 30.2155 84.4945L2.23688 48.9815C1.05653 47.4835 0.414551 45.6309 0.414551 43.7227C0.414551 41.8144 1.05653 39.9618 2.23688 38.4638L30.2197 2.94655V2.9423Z"
+              fill="url(#paint0_linear_20_357)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_20_357"
+                x1="35.2099"
+                y1="0.519775"
+                x2="35.2099"
+                y2="86.9198"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0.509615" stop-color="#D32F2F" />
+                <stop offset="1" stop-color="#9C2323" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="card-suit"></div>
+        </div>
+        <div class="card-front-bottom">
+          <div>
+            <div class="card-suit">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.0959 22.401C10.9378 22.6008 10.7364 22.7623 10.5067 22.8733C10.2771 22.9843 10.0252 23.042 9.77 23.042C9.51481 23.042 9.26293 22.9843 9.03329 22.8733C8.80365 22.7623 8.60222 22.6008 8.44412 22.401L1.00906 13.0034C0.695442 12.6071 0.52487 12.1169 0.52487 11.612C0.52487 11.1071 0.695442 10.6169 1.00906 10.2206L8.44412 0.822992C8.6022 0.622987 8.80369 0.461333 9.03344 0.350187C9.26319 0.239042 9.51522 0.181298 9.77057 0.181298C10.0259 0.181298 10.2779 0.239042 10.5077 0.350187C10.7374 0.461333 10.9389 0.622987 11.097 0.822992L18.5309 10.2194C18.8446 10.6158 19.0151 11.106 19.0151 11.6109C19.0151 12.1158 18.8446 12.606 18.5309 13.0023L11.0959 22.3999V22.401Z"
+                fill="url(#paint0_linear_22_276)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_276"
+                  x1="9.77"
+                  y1="23.042"
+                  x2="9.77"
+                  y2="0.181297"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- Rank 1, Diamond, Red -->
+      <div class="card-front-red" data-rank="1" data-suit="diamond">
+        <div class="card-front-top">
+          <div>
+            <div class="card-rank">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8.50666 1.36473C8.66475 1.16494 8.86618 1.00346 9.09582 0.892446C9.32546 0.781429 9.57734 0.723755 9.83254 0.723755C10.0877 0.723755 10.3396 0.781429 10.5693 0.892446C10.7989 1.00346 11.0003 1.16494 11.1584 1.36473L18.5935 10.7623C18.9071 11.1587 19.0777 11.6488 19.0777 12.1537C19.0777 12.6587 18.9071 13.1488 18.5935 13.5452L11.1584 22.9428C11.0003 23.1428 10.7988 23.3044 10.5691 23.4156C10.3393 23.5267 10.0873 23.5844 9.83197 23.5844C9.57662 23.5844 9.3246 23.5267 9.09485 23.4156C8.8651 23.3044 8.66361 23.1428 8.50553 22.9428L1.0716 13.5463C0.757975 13.15 0.587402 12.6598 0.587402 12.1549C0.587402 11.65 0.757975 11.1598 1.0716 10.7634L8.50666 1.36586V1.36473Z"
+                fill="url(#paint0_linear_22_280)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_280"
+                  x1="9.83254"
+                  y1="0.723755"
+                  x2="9.83254"
+                  y2="23.5844"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div class="card-front-middle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="87"
+            viewBox="0 0 70 87"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M30.2197 2.9423C30.8147 2.18718 31.5729 1.57691 32.4371 1.15733C33.3014 0.737751 34.2494 0.519775 35.2099 0.519775C36.1703 0.519775 37.1183 0.737751 37.9826 1.15733C38.8469 1.57691 39.605 2.18718 40.2 2.9423L68.1829 38.4596C69.3632 39.9576 70.0052 41.8102 70.0052 43.7184C70.0052 45.6267 69.3632 47.4793 68.1829 48.9772L40.2 84.4945C39.6051 85.2504 38.8467 85.8614 37.982 86.2814C37.1173 86.7015 36.1688 86.9197 35.2078 86.9197C34.2467 86.9197 33.2982 86.7015 32.4335 86.2814C31.5688 85.8614 30.8105 85.2504 30.2155 84.4945L2.23688 48.9815C1.05653 47.4835 0.414551 45.6309 0.414551 43.7227C0.414551 41.8144 1.05653 39.9618 2.23688 38.4638L30.2197 2.94655V2.9423Z"
+              fill="url(#paint0_linear_20_357)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_20_357"
+                x1="35.2099"
+                y1="0.519775"
+                x2="35.2099"
+                y2="86.9198"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0.509615" stop-color="#D32F2F" />
+                <stop offset="1" stop-color="#9C2323" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="card-suit"></div>
+        </div>
+        <div class="card-front-bottom">
+          <div>
+            <div class="card-suit">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.0959 22.401C10.9378 22.6008 10.7364 22.7623 10.5067 22.8733C10.2771 22.9843 10.0252 23.042 9.77 23.042C9.51481 23.042 9.26293 22.9843 9.03329 22.8733C8.80365 22.7623 8.60222 22.6008 8.44412 22.401L1.00906 13.0034C0.695442 12.6071 0.52487 12.1169 0.52487 11.612C0.52487 11.1071 0.695442 10.6169 1.00906 10.2206L8.44412 0.822992C8.6022 0.622987 8.80369 0.461333 9.03344 0.350187C9.26319 0.239042 9.51522 0.181298 9.77057 0.181298C10.0259 0.181298 10.2779 0.239042 10.5077 0.350187C10.7374 0.461333 10.9389 0.622987 11.097 0.822992L18.5309 10.2194C18.8446 10.6158 19.0151 11.106 19.0151 11.6109C19.0151 12.1158 18.8446 12.606 18.5309 13.0023L11.0959 22.3999V22.401Z"
+                fill="url(#paint0_linear_22_276)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_276"
+                  x1="9.77"
+                  y1="23.042"
+                  x2="9.77"
+                  y2="0.181297"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- Rank 1, Diamond, Red -->
+      <div class="card-front-red" data-rank="1" data-suit="diamond">
+        <div class="card-front-top">
+          <div>
+            <div class="card-rank">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8.50666 1.36473C8.66475 1.16494 8.86618 1.00346 9.09582 0.892446C9.32546 0.781429 9.57734 0.723755 9.83254 0.723755C10.0877 0.723755 10.3396 0.781429 10.5693 0.892446C10.7989 1.00346 11.0003 1.16494 11.1584 1.36473L18.5935 10.7623C18.9071 11.1587 19.0777 11.6488 19.0777 12.1537C19.0777 12.6587 18.9071 13.1488 18.5935 13.5452L11.1584 22.9428C11.0003 23.1428 10.7988 23.3044 10.5691 23.4156C10.3393 23.5267 10.0873 23.5844 9.83197 23.5844C9.57662 23.5844 9.3246 23.5267 9.09485 23.4156C8.8651 23.3044 8.66361 23.1428 8.50553 22.9428L1.0716 13.5463C0.757975 13.15 0.587402 12.6598 0.587402 12.1549C0.587402 11.65 0.757975 11.1598 1.0716 10.7634L8.50666 1.36586V1.36473Z"
+                fill="url(#paint0_linear_22_280)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_280"
+                  x1="9.83254"
+                  y1="0.723755"
+                  x2="9.83254"
+                  y2="23.5844"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div class="card-front-middle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="87"
+            viewBox="0 0 70 87"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M30.2197 2.9423C30.8147 2.18718 31.5729 1.57691 32.4371 1.15733C33.3014 0.737751 34.2494 0.519775 35.2099 0.519775C36.1703 0.519775 37.1183 0.737751 37.9826 1.15733C38.8469 1.57691 39.605 2.18718 40.2 2.9423L68.1829 38.4596C69.3632 39.9576 70.0052 41.8102 70.0052 43.7184C70.0052 45.6267 69.3632 47.4793 68.1829 48.9772L40.2 84.4945C39.6051 85.2504 38.8467 85.8614 37.982 86.2814C37.1173 86.7015 36.1688 86.9197 35.2078 86.9197C34.2467 86.9197 33.2982 86.7015 32.4335 86.2814C31.5688 85.8614 30.8105 85.2504 30.2155 84.4945L2.23688 48.9815C1.05653 47.4835 0.414551 45.6309 0.414551 43.7227C0.414551 41.8144 1.05653 39.9618 2.23688 38.4638L30.2197 2.94655V2.9423Z"
+              fill="url(#paint0_linear_20_357)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_20_357"
+                x1="35.2099"
+                y1="0.519775"
+                x2="35.2099"
+                y2="86.9198"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0.509615" stop-color="#D32F2F" />
+                <stop offset="1" stop-color="#9C2323" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="card-suit"></div>
+        </div>
+        <div class="card-front-bottom">
+          <div>
+            <div class="card-suit">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.0959 22.401C10.9378 22.6008 10.7364 22.7623 10.5067 22.8733C10.2771 22.9843 10.0252 23.042 9.77 23.042C9.51481 23.042 9.26293 22.9843 9.03329 22.8733C8.80365 22.7623 8.60222 22.6008 8.44412 22.401L1.00906 13.0034C0.695442 12.6071 0.52487 12.1169 0.52487 11.612C0.52487 11.1071 0.695442 10.6169 1.00906 10.2206L8.44412 0.822992C8.6022 0.622987 8.80369 0.461333 9.03344 0.350187C9.26319 0.239042 9.51522 0.181298 9.77057 0.181298C10.0259 0.181298 10.2779 0.239042 10.5077 0.350187C10.7374 0.461333 10.9389 0.622987 11.097 0.822992L18.5309 10.2194C18.8446 10.6158 19.0151 11.106 19.0151 11.6109C19.0151 12.1158 18.8446 12.606 18.5309 13.0023L11.0959 22.3999V22.401Z"
+                fill="url(#paint0_linear_22_276)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_276"
+                  x1="9.77"
+                  y1="23.042"
+                  x2="9.77"
+                  y2="0.181297"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- Rank 1, Diamond, Red -->
+      <div class="card-front-red" data-rank="1" data-suit="diamond">
+        <div class="card-front-top">
+          <div>
+            <div class="card-rank">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8.50666 1.36473C8.66475 1.16494 8.86618 1.00346 9.09582 0.892446C9.32546 0.781429 9.57734 0.723755 9.83254 0.723755C10.0877 0.723755 10.3396 0.781429 10.5693 0.892446C10.7989 1.00346 11.0003 1.16494 11.1584 1.36473L18.5935 10.7623C18.9071 11.1587 19.0777 11.6488 19.0777 12.1537C19.0777 12.6587 18.9071 13.1488 18.5935 13.5452L11.1584 22.9428C11.0003 23.1428 10.7988 23.3044 10.5691 23.4156C10.3393 23.5267 10.0873 23.5844 9.83197 23.5844C9.57662 23.5844 9.3246 23.5267 9.09485 23.4156C8.8651 23.3044 8.66361 23.1428 8.50553 22.9428L1.0716 13.5463C0.757975 13.15 0.587402 12.6598 0.587402 12.1549C0.587402 11.65 0.757975 11.1598 1.0716 10.7634L8.50666 1.36586V1.36473Z"
+                fill="url(#paint0_linear_22_280)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_280"
+                  x1="9.83254"
+                  y1="0.723755"
+                  x2="9.83254"
+                  y2="23.5844"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div class="card-front-middle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="87"
+            viewBox="0 0 70 87"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M30.2197 2.9423C30.8147 2.18718 31.5729 1.57691 32.4371 1.15733C33.3014 0.737751 34.2494 0.519775 35.2099 0.519775C36.1703 0.519775 37.1183 0.737751 37.9826 1.15733C38.8469 1.57691 39.605 2.18718 40.2 2.9423L68.1829 38.4596C69.3632 39.9576 70.0052 41.8102 70.0052 43.7184C70.0052 45.6267 69.3632 47.4793 68.1829 48.9772L40.2 84.4945C39.6051 85.2504 38.8467 85.8614 37.982 86.2814C37.1173 86.7015 36.1688 86.9197 35.2078 86.9197C34.2467 86.9197 33.2982 86.7015 32.4335 86.2814C31.5688 85.8614 30.8105 85.2504 30.2155 84.4945L2.23688 48.9815C1.05653 47.4835 0.414551 45.6309 0.414551 43.7227C0.414551 41.8144 1.05653 39.9618 2.23688 38.4638L30.2197 2.94655V2.9423Z"
+              fill="url(#paint0_linear_20_357)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_20_357"
+                x1="35.2099"
+                y1="0.519775"
+                x2="35.2099"
+                y2="86.9198"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0.509615" stop-color="#D32F2F" />
+                <stop offset="1" stop-color="#9C2323" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="card-suit"></div>
+        </div>
+        <div class="card-front-bottom">
+          <div>
+            <div class="card-suit">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.0959 22.401C10.9378 22.6008 10.7364 22.7623 10.5067 22.8733C10.2771 22.9843 10.0252 23.042 9.77 23.042C9.51481 23.042 9.26293 22.9843 9.03329 22.8733C8.80365 22.7623 8.60222 22.6008 8.44412 22.401L1.00906 13.0034C0.695442 12.6071 0.52487 12.1169 0.52487 11.612C0.52487 11.1071 0.695442 10.6169 1.00906 10.2206L8.44412 0.822992C8.6022 0.622987 8.80369 0.461333 9.03344 0.350187C9.26319 0.239042 9.51522 0.181298 9.77057 0.181298C10.0259 0.181298 10.2779 0.239042 10.5077 0.350187C10.7374 0.461333 10.9389 0.622987 11.097 0.822992L18.5309 10.2194C18.8446 10.6158 19.0151 11.106 19.0151 11.6109C19.0151 12.1158 18.8446 12.606 18.5309 13.0023L11.0959 22.3999V22.401Z"
+                fill="url(#paint0_linear_22_276)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_276"
+                  x1="9.77"
+                  y1="23.042"
+                  x2="9.77"
+                  y2="0.181297"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- Rank 1, Diamond, Red -->
+      <div class="card-front-red" data-rank="1" data-suit="diamond">
+        <div class="card-front-top">
+          <div>
+            <div class="card-rank">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8.50666 1.36473C8.66475 1.16494 8.86618 1.00346 9.09582 0.892446C9.32546 0.781429 9.57734 0.723755 9.83254 0.723755C10.0877 0.723755 10.3396 0.781429 10.5693 0.892446C10.7989 1.00346 11.0003 1.16494 11.1584 1.36473L18.5935 10.7623C18.9071 11.1587 19.0777 11.6488 19.0777 12.1537C19.0777 12.6587 18.9071 13.1488 18.5935 13.5452L11.1584 22.9428C11.0003 23.1428 10.7988 23.3044 10.5691 23.4156C10.3393 23.5267 10.0873 23.5844 9.83197 23.5844C9.57662 23.5844 9.3246 23.5267 9.09485 23.4156C8.8651 23.3044 8.66361 23.1428 8.50553 22.9428L1.0716 13.5463C0.757975 13.15 0.587402 12.6598 0.587402 12.1549C0.587402 11.65 0.757975 11.1598 1.0716 10.7634L8.50666 1.36586V1.36473Z"
+                fill="url(#paint0_linear_22_280)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_280"
+                  x1="9.83254"
+                  y1="0.723755"
+                  x2="9.83254"
+                  y2="23.5844"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div class="card-front-middle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="87"
+            viewBox="0 0 70 87"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M30.2197 2.9423C30.8147 2.18718 31.5729 1.57691 32.4371 1.15733C33.3014 0.737751 34.2494 0.519775 35.2099 0.519775C36.1703 0.519775 37.1183 0.737751 37.9826 1.15733C38.8469 1.57691 39.605 2.18718 40.2 2.9423L68.1829 38.4596C69.3632 39.9576 70.0052 41.8102 70.0052 43.7184C70.0052 45.6267 69.3632 47.4793 68.1829 48.9772L40.2 84.4945C39.6051 85.2504 38.8467 85.8614 37.982 86.2814C37.1173 86.7015 36.1688 86.9197 35.2078 86.9197C34.2467 86.9197 33.2982 86.7015 32.4335 86.2814C31.5688 85.8614 30.8105 85.2504 30.2155 84.4945L2.23688 48.9815C1.05653 47.4835 0.414551 45.6309 0.414551 43.7227C0.414551 41.8144 1.05653 39.9618 2.23688 38.4638L30.2197 2.94655V2.9423Z"
+              fill="url(#paint0_linear_20_357)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_20_357"
+                x1="35.2099"
+                y1="0.519775"
+                x2="35.2099"
+                y2="86.9198"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0.509615" stop-color="#D32F2F" />
+                <stop offset="1" stop-color="#9C2323" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="card-suit"></div>
+        </div>
+        <div class="card-front-bottom">
+          <div>
+            <div class="card-suit">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.0959 22.401C10.9378 22.6008 10.7364 22.7623 10.5067 22.8733C10.2771 22.9843 10.0252 23.042 9.77 23.042C9.51481 23.042 9.26293 22.9843 9.03329 22.8733C8.80365 22.7623 8.60222 22.6008 8.44412 22.401L1.00906 13.0034C0.695442 12.6071 0.52487 12.1169 0.52487 11.612C0.52487 11.1071 0.695442 10.6169 1.00906 10.2206L8.44412 0.822992C8.6022 0.622987 8.80369 0.461333 9.03344 0.350187C9.26319 0.239042 9.51522 0.181298 9.77057 0.181298C10.0259 0.181298 10.2779 0.239042 10.5077 0.350187C10.7374 0.461333 10.9389 0.622987 11.097 0.822992L18.5309 10.2194C18.8446 10.6158 19.0151 11.106 19.0151 11.6109C19.0151 12.1158 18.8446 12.606 18.5309 13.0023L11.0959 22.3999V22.401Z"
+                fill="url(#paint0_linear_22_276)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_276"
+                  x1="9.77"
+                  y1="23.042"
+                  x2="9.77"
+                  y2="0.181297"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- Rank 1, Diamond, Red -->
+      <div class="card-front-red" data-rank="1" data-suit="diamond">
+        <div class="card-front-top">
+          <div>
+            <div class="card-rank">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8.50666 1.36473C8.66475 1.16494 8.86618 1.00346 9.09582 0.892446C9.32546 0.781429 9.57734 0.723755 9.83254 0.723755C10.0877 0.723755 10.3396 0.781429 10.5693 0.892446C10.7989 1.00346 11.0003 1.16494 11.1584 1.36473L18.5935 10.7623C18.9071 11.1587 19.0777 11.6488 19.0777 12.1537C19.0777 12.6587 18.9071 13.1488 18.5935 13.5452L11.1584 22.9428C11.0003 23.1428 10.7988 23.3044 10.5691 23.4156C10.3393 23.5267 10.0873 23.5844 9.83197 23.5844C9.57662 23.5844 9.3246 23.5267 9.09485 23.4156C8.8651 23.3044 8.66361 23.1428 8.50553 22.9428L1.0716 13.5463C0.757975 13.15 0.587402 12.6598 0.587402 12.1549C0.587402 11.65 0.757975 11.1598 1.0716 10.7634L8.50666 1.36586V1.36473Z"
+                fill="url(#paint0_linear_22_280)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_280"
+                  x1="9.83254"
+                  y1="0.723755"
+                  x2="9.83254"
+                  y2="23.5844"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div class="card-front-middle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="87"
+            viewBox="0 0 70 87"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M30.2197 2.9423C30.8147 2.18718 31.5729 1.57691 32.4371 1.15733C33.3014 0.737751 34.2494 0.519775 35.2099 0.519775C36.1703 0.519775 37.1183 0.737751 37.9826 1.15733C38.8469 1.57691 39.605 2.18718 40.2 2.9423L68.1829 38.4596C69.3632 39.9576 70.0052 41.8102 70.0052 43.7184C70.0052 45.6267 69.3632 47.4793 68.1829 48.9772L40.2 84.4945C39.6051 85.2504 38.8467 85.8614 37.982 86.2814C37.1173 86.7015 36.1688 86.9197 35.2078 86.9197C34.2467 86.9197 33.2982 86.7015 32.4335 86.2814C31.5688 85.8614 30.8105 85.2504 30.2155 84.4945L2.23688 48.9815C1.05653 47.4835 0.414551 45.6309 0.414551 43.7227C0.414551 41.8144 1.05653 39.9618 2.23688 38.4638L30.2197 2.94655V2.9423Z"
+              fill="url(#paint0_linear_20_357)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_20_357"
+                x1="35.2099"
+                y1="0.519775"
+                x2="35.2099"
+                y2="86.9198"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0.509615" stop-color="#D32F2F" />
+                <stop offset="1" stop-color="#9C2323" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="card-suit"></div>
+        </div>
+        <div class="card-front-bottom">
+          <div>
+            <div class="card-suit">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.0959 22.401C10.9378 22.6008 10.7364 22.7623 10.5067 22.8733C10.2771 22.9843 10.0252 23.042 9.77 23.042C9.51481 23.042 9.26293 22.9843 9.03329 22.8733C8.80365 22.7623 8.60222 22.6008 8.44412 22.401L1.00906 13.0034C0.695442 12.6071 0.52487 12.1169 0.52487 11.612C0.52487 11.1071 0.695442 10.6169 1.00906 10.2206L8.44412 0.822992C8.6022 0.622987 8.80369 0.461333 9.03344 0.350187C9.26319 0.239042 9.51522 0.181298 9.77057 0.181298C10.0259 0.181298 10.2779 0.239042 10.5077 0.350187C10.7374 0.461333 10.9389 0.622987 11.097 0.822992L18.5309 10.2194C18.8446 10.6158 19.0151 11.106 19.0151 11.6109C19.0151 12.1158 18.8446 12.606 18.5309 13.0023L11.0959 22.3999V22.401Z"
+                fill="url(#paint0_linear_22_276)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_276"
+                  x1="9.77"
+                  y1="23.042"
+                  x2="9.77"
+                  y2="0.181297"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- Rank 1, Diamond, Red -->
+      <div class="card-front-red" data-rank="1" data-suit="diamond">
+        <div class="card-front-top">
+          <div>
+            <div class="card-rank">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8.50666 1.36473C8.66475 1.16494 8.86618 1.00346 9.09582 0.892446C9.32546 0.781429 9.57734 0.723755 9.83254 0.723755C10.0877 0.723755 10.3396 0.781429 10.5693 0.892446C10.7989 1.00346 11.0003 1.16494 11.1584 1.36473L18.5935 10.7623C18.9071 11.1587 19.0777 11.6488 19.0777 12.1537C19.0777 12.6587 18.9071 13.1488 18.5935 13.5452L11.1584 22.9428C11.0003 23.1428 10.7988 23.3044 10.5691 23.4156C10.3393 23.5267 10.0873 23.5844 9.83197 23.5844C9.57662 23.5844 9.3246 23.5267 9.09485 23.4156C8.8651 23.3044 8.66361 23.1428 8.50553 22.9428L1.0716 13.5463C0.757975 13.15 0.587402 12.6598 0.587402 12.1549C0.587402 11.65 0.757975 11.1598 1.0716 10.7634L8.50666 1.36586V1.36473Z"
+                fill="url(#paint0_linear_22_280)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_280"
+                  x1="9.83254"
+                  y1="0.723755"
+                  x2="9.83254"
+                  y2="23.5844"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div class="card-front-middle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="87"
+            viewBox="0 0 70 87"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M30.2197 2.9423C30.8147 2.18718 31.5729 1.57691 32.4371 1.15733C33.3014 0.737751 34.2494 0.519775 35.2099 0.519775C36.1703 0.519775 37.1183 0.737751 37.9826 1.15733C38.8469 1.57691 39.605 2.18718 40.2 2.9423L68.1829 38.4596C69.3632 39.9576 70.0052 41.8102 70.0052 43.7184C70.0052 45.6267 69.3632 47.4793 68.1829 48.9772L40.2 84.4945C39.6051 85.2504 38.8467 85.8614 37.982 86.2814C37.1173 86.7015 36.1688 86.9197 35.2078 86.9197C34.2467 86.9197 33.2982 86.7015 32.4335 86.2814C31.5688 85.8614 30.8105 85.2504 30.2155 84.4945L2.23688 48.9815C1.05653 47.4835 0.414551 45.6309 0.414551 43.7227C0.414551 41.8144 1.05653 39.9618 2.23688 38.4638L30.2197 2.94655V2.9423Z"
+              fill="url(#paint0_linear_20_357)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_20_357"
+                x1="35.2099"
+                y1="0.519775"
+                x2="35.2099"
+                y2="86.9198"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0.509615" stop-color="#D32F2F" />
+                <stop offset="1" stop-color="#9C2323" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="card-suit"></div>
+        </div>
+        <div class="card-front-bottom">
+          <div>
+            <div class="card-suit">1</div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="24"
+              viewBox="0 0 20 24"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.0959 22.401C10.9378 22.6008 10.7364 22.7623 10.5067 22.8733C10.2771 22.9843 10.0252 23.042 9.77 23.042C9.51481 23.042 9.26293 22.9843 9.03329 22.8733C8.80365 22.7623 8.60222 22.6008 8.44412 22.401L1.00906 13.0034C0.695442 12.6071 0.52487 12.1169 0.52487 11.612C0.52487 11.1071 0.695442 10.6169 1.00906 10.2206L8.44412 0.822992C8.6022 0.622987 8.80369 0.461333 9.03344 0.350187C9.26319 0.239042 9.51522 0.181298 9.77057 0.181298C10.0259 0.181298 10.2779 0.239042 10.5077 0.350187C10.7374 0.461333 10.9389 0.622987 11.097 0.822992L18.5309 10.2194C18.8446 10.6158 19.0151 11.106 19.0151 11.6109C19.0151 12.1158 18.8446 12.606 18.5309 13.0023L11.0959 22.3999V22.401Z"
+                fill="url(#paint0_linear_22_276)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_22_276"
+                  x1="9.77"
+                  y1="23.042"
+                  x2="9.77"
+                  y2="0.181297"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0.509615" stop-color="#D32F2F" />
+                  <stop offset="1" stop-color="#9C2323" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <script src="./script.js" type="module"></script>
+
+    <script src="./test.js" type="module"></script>
   </body>
 </html>
