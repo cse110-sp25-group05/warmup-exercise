@@ -42,17 +42,21 @@ body {
 }
 
 .chip {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 4px solid black;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  font-size: 18px;
-}
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: grey; /* fallback color */
+    padding: 0;
+  }
+  
 
 .red-chip {
   background-color: #e74c3c;
