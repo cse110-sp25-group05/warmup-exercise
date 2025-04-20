@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".card");
   const deckContainer = document.getElementById("deck-container");
   const shuffleButton = document.getElementById("shuffle-button");
+  const newGameButton = document.getElementById("new-game-button");
+  const resetDeckButton = document.getElementById("reset-deck-button");
 
   // Flip functionality
   cards.forEach((card) => {
@@ -11,11 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Shuffle functionality
-  shuffleButton.addEventListener("click", () => {
-    const cardArray = Array.from(deckContainer.children); // Get all cards as an array
-    shuffleArray(cardArray); // Shuffle the array
-    cardArray.forEach((card) => deckContainer.appendChild(card)); // Re-append cards in shuffled order
-  });
+  if (shuffleButton) {
+    shuffleButton.addEventListener("click", () => {
+      const cardArray = Array.from(deckContainer.children); // Get all cards as an array
+      shuffleArray(cardArray); // Shuffle the array
+      cardArray.forEach((card) => deckContainer.appendChild(card)); // Re-append cards in shuffled order
+    });
+  }
 
   // Fisher-Yates Shuffle Algorithm
   function shuffleArray(array) {
