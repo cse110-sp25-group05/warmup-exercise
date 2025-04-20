@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const cards2 = document.querySelectorAll(".card");
 const deckContainer = document.getElementById("deck-container");
 const shuffleButton = document.getElementById("shuffle-button");
-const startButton = document.getElementById("start-button");
+const newGameButton = document.getElementById("new-game-button");
 
 // Global vars to track player/dealer sum
 var dealerSum = 0;
@@ -45,7 +45,7 @@ shuffleButton.addEventListener("click", () => {
 });
 
 // Deal Functionality
-startButton.addEventListener("click", startGame);
+newGameButton.addEventListener("click", startGame);
 
 // Fisher-Yates Shuffle Algorithm
 function shuffleArray(array) {
