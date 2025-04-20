@@ -61,9 +61,17 @@ window.onload = function(){
 
 
 function startGame(){
-  shuffleArray(cards);
+  // Reset Card Containers
   const dealerHand = document.getElementById('dealer-cards');
   const playerHand = document.getElementById('player-cards');
+  dealerHand.innerHTML = '';
+  playerHand.innerHTML = '';
+
+  // Reset scores
+  playerSum = 0;
+  dealerSum = 0;
+
+  shuffleArray(cards);
 
   for (let i = 0; i < 2; i++) {
     // Deal a card to the player
