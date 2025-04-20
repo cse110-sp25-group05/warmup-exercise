@@ -35,3 +35,10 @@ section#deck-container {
   justify-content: center;
   gap: 20px;
 }
+
+/* player bank styles */
+#player-bank-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}

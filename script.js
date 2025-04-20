@@ -24,4 +24,21 @@ document.addEventListener("DOMContentLoaded", () => {
       [array[i], array[j]] = [array[j], array[i]];
     }
   }
+  
+  // money tracking demo
+  const standButton = document.getElementById("stand-button");
+  const playerBank = document.getElementById("player-bank");
+  
+  if (standButton && playerBank) {
+    standButton.addEventListener("click", () => {
+      // demo a win/loss
+      const win = Math.random() > 0.5;
+      
+      if (win) {
+        playerBank.shadowRoot.querySelector('#win-button').click();
+      } else {
+        playerBank.shadowRoot.querySelector('#lose-button').click();
+      }
+    });
+  }
 });
