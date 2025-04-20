@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const cards2 = document.querySelectorAll(".card");
 const deckContainer = document.getElementById("deck-container");
 const shuffleButton = document.getElementById("shuffle-button");
-const dealButton = document.getElementById("deal-button");
+const startButton = document.getElementById("start-button");
 
 // Global vars to track player/dealer sum
 var dealerSum = 0;
@@ -41,13 +41,11 @@ cards.forEach((card) => {
 
 // Shuffle functionality
 shuffleButton.addEventListener("click", () => {
-  const cardArray = Array.from(deckContainer.children); // Get all cards as an array
-  shuffleArray(cardArray); // Shuffle the array
-  cardArray.forEach((card) => deckContainer.appendChild(card)); // Re-append cards in shuffled order
+  shuffleArray(cards); // Shuffle the array
 });
 
 // Deal Functionality
-dealButton.addEventListener("click", startGame);
+startButton.addEventListener("click", startGame);
 
 // Fisher-Yates Shuffle Algorithm
 function shuffleArray(array) {
@@ -58,32 +56,19 @@ function shuffleArray(array) {
 }
 
 window.onload = function(){
-  buildDeck();
-  shuffleArray(cardArray);
-  startGame();
+  shuffleArray(cards);
 }
 
-function buildDeck(){
-  
-  let values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
-  let types = ["clover", "diamond", "heart", "spade"];
-  deck = [];
-
-  for(let i = 0; i< types.length; i++){
-      for(let j = 0; j <values.length; j++){
-          deck.push(values[j] + "-" + types[i]);
-      }
-  }
-  console.log(deck);
-}
 
 function startGame(){
+  shuffleArray(cards);
   const dealerHand = document.getElementById('dealer-cards');
   const playerHand = document.getElementById('player-cards');
 
   for (let i = 0; i < 2; i++) {
     // Deal a card to the player
     const playerCard = cards.pop(); // Pop the card from the array
+    playerSum += playerCard.dataset.rank;
     playerHand.appendChild(playerCard); // Add the card to the player's hand
     
     // Deal a card to the dealer
@@ -92,10 +77,8 @@ function startGame(){
   }
 }
 
-function getValue(card){
-  let data = card.split("-");
-  let value = data[0];
-  return parseInt(value);
+function getValue(rank){
+  return 0;
 }
 
 });
