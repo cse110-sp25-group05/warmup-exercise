@@ -129,3 +129,11 @@
     linear-gradient(180deg, #212121 52.88%, #878787 100%)
   );
 }
+#player-hand {
+  border: 2px dashed red;
+  min-height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
