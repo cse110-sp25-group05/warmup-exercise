@@ -79,3 +79,9 @@ section#deck-container {
 #reset-deck-button:hover {
   background-color: #e53935 !important;
 }
+
+div#dealer-cards, div#player-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
