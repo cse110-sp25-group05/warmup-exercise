@@ -142,8 +142,7 @@ function startGame(){
 
   shuffleArray(cards);
 
-  for (let i = 0; i < 2; i++) {
-    // Deal a card to the dealer
+  while(dealerSum < 17){
     const dealerCard = cards.pop(); // Pop the card from the array
     const frontFaceDealer = dealerCard.querySelector('.card-front-black, .card-front-red');
     const rankDealer = frontFaceDealer.dataset.rank;
@@ -151,7 +150,9 @@ function startGame(){
     dealerSum += getValue(rankDealer, dealerSum);
     console.log("Dealer Sum:", dealerSum);
     dealerHand.appendChild(dealerCard); // Add the card to the dealer's hand
+  }
 
+  for (let i = 0; i < 2; i++) {
     // Deal a card to the player
     const playerCard = cards.pop(); // Pop the card from the array
     const frontFace = playerCard.querySelector('.card-front-black, .card-front-red');
@@ -165,7 +166,7 @@ function startGame(){
 }
 
 function getValue(val, sum){
-  if(val === "A"){
+  if(val === "1"){ // 1 because we assigned aces to be 1 instead of A in data-rank
     if((sum + 11) > 21){
       return 1;
     }
