@@ -44,7 +44,7 @@ shuffleButton.addEventListener("click", () => {
   shuffleArray(cards); // Shuffle the array
 });
 
-// Deal Functionality
+// New Game Functionality
 newGameButton.addEventListener("click", startGame);
 
 // Fisher-Yates Shuffle Algorithm
@@ -74,35 +74,106 @@ function startGame(){
   shuffleArray(cards);
 
   for (let i = 0; i < 2; i++) {
+    // Deal a card to the dealer
+    const dealerCard = cards.pop(); // Pop the card from the array
+    const frontFaceDealer = dealerCard.querySelector('.card-front-black, .card-front-red');
+    const rankDealer = frontFaceDealer.dataset.rank;
+    console.log("Player Card Rank:", rankDealer);
+    dealerSum += getValue(rankDealer);
+    console.log("Dealer Sum:", dealerSum);
+    dealerHand.appendChild(dealerCard); // Add the card to the dealer's hand
+
     // Deal a card to the player
     const playerCard = cards.pop(); // Pop the card from the array
     const frontFace = playerCard.querySelector('.card-front-black, .card-front-red');
     const rank = frontFace.dataset.rank;
-    //console.log(rank);
+    console.log("Player Card Rank:", rank);
     playerSum += getValue(rank);
     console.log("Player Sum:", playerSum);
     playerHand.appendChild(playerCard); // Add the card to the player's hand
-    
-    // Deal a card to the dealer
-    const dealerCard = cards.pop(); // Pop the card from the array
-    const frontFaceDealer = dealerCard.querySelector('.card-front-black, .card-front-red');
-    const rankDealer = frontFace.dataset.rank;
-    dealerSum += getValue(rankDealer);
-    console.log("Dealer Sum:", dealerSum);
-    dealerHand.appendChild(dealerCard); // Add the card to the dealer's hand
+
   }
 }
 
-function getValue(val){
-  if(val == "A"){
-    if((playerSum + 11) > 21){
+function startGame(){
+  // Reset Card Containers
+  const dealerHand = document.getElementById('dealer-cards');
+  const playerHand = document.getElementById('player-cards');
+  dealerHand.innerHTML = '';
+  playerHand.innerHTML = '';
+
+  // Reset scores
+  playerSum = 0;
+  dealerSum = 0;
+
+  shuffleArray(cards);
+
+  for (let i = 0; i < 2; i++) {
+    // Deal a card to the dealer
+    const dealerCard = cards.pop(); // Pop the card from the array
+    const frontFaceDealer = dealerCard.querySelector('.card-front-black, .card-front-red');
+    const rankDealer = frontFaceDealer.dataset.rank;
+    console.log("Player Card Rank:", rankDealer);
+    dealerSum += getValue(rankDealer);
+    console.log("Dealer Sum:", dealerSum);
+    dealerHand.appendChild(dealerCard); // Add the card to the dealer's hand
+
+    // Deal a card to the player
+    const playerCard = cards.pop(); // Pop the card from the array
+    const frontFace = playerCard.querySelector('.card-front-black, .card-front-red');
+    const rank = frontFace.dataset.rank;
+    console.log("Player Card Rank:", rank);
+    playerSum += getValue(rank);
+    console.log("Player Sum:", playerSum);
+    playerHand.appendChild(playerCard); // Add the card to the player's hand
+
+  }
+}
+function startGame(){
+  // Reset Card Containers
+  const dealerHand = document.getElementById('dealer-cards');
+  const playerHand = document.getElementById('player-cards');
+  dealerHand.innerHTML = '';
+  playerHand.innerHTML = '';
+
+  // Reset scores
+  playerSum = 0;
+  dealerSum = 0;
+
+  shuffleArray(cards);
+
+  for (let i = 0; i < 2; i++) {
+    // Deal a card to the dealer
+    const dealerCard = cards.pop(); // Pop the card from the array
+    const frontFaceDealer = dealerCard.querySelector('.card-front-black, .card-front-red');
+    const rankDealer = frontFaceDealer.dataset.rank;
+    console.log("Dealer Card Rank:", rankDealer);
+    dealerSum += getValue(rankDealer, dealerSum);
+    console.log("Dealer Sum:", dealerSum);
+    dealerHand.appendChild(dealerCard); // Add the card to the dealer's hand
+
+    // Deal a card to the player
+    const playerCard = cards.pop(); // Pop the card from the array
+    const frontFace = playerCard.querySelector('.card-front-black, .card-front-red');
+    const rank = frontFace.dataset.rank;
+    console.log("Player Card Rank:", rank);
+    playerSum += getValue(rank, playerSum);
+    console.log("Player Sum:", playerSum);
+    playerHand.appendChild(playerCard); // Add the card to the player's hand
+
+  }
+}
+
+function getValue(val, sum){
+  if(val === "A"){
+    if((sum + 11) > 21){
       return 1;
     }
     else{
       return 11;
     }
   }
-  else if(val == ("J" || "Q" || "K")){
+  else if(val === "J" || val === "Q" || val === "K"){
     return 10;
   }
   else{
