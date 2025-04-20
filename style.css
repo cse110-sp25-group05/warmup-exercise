@@ -42,3 +42,25 @@ section#deck-container {
   justify-content: center;
   margin: 20px 0;
 }
+
+/* Style for the shuffle button */
+#shuffle-button {
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  padding: 0.5rem 10rem; /* Add padding */
+  font-size: 1rem; /* Set font size */
+  font-family: var(--main-font, sans-serif); /* Use main font */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+  margin-bottom: 1rem; 
+}
+
+#shuffle-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+#shuffle-button:active {
+  background-color: #3e8e41; /* Even darker green when clicked */
+}
