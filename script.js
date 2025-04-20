@@ -61,24 +61,53 @@ window.onload = function(){
 
 
 function startGame(){
-  shuffleArray(cards);
+  // Reset Card Containers
   const dealerHand = document.getElementById('dealer-cards');
   const playerHand = document.getElementById('player-cards');
+  dealerHand.innerHTML = '';
+  playerHand.innerHTML = '';
+
+  // Reset scores
+  playerSum = 0;
+  dealerSum = 0;
+
+  shuffleArray(cards);
 
   for (let i = 0; i < 2; i++) {
     // Deal a card to the player
     const playerCard = cards.pop(); // Pop the card from the array
-    playerSum += playerCard.dataset.rank;
+    const frontFace = playerCard.querySelector('.card-front-black, .card-front-red');
+    const rank = frontFace.dataset.rank;
+    //console.log(rank);
+    playerSum += getValue(rank);
+    console.log("Player Sum:", playerSum);
     playerHand.appendChild(playerCard); // Add the card to the player's hand
     
     // Deal a card to the dealer
     const dealerCard = cards.pop(); // Pop the card from the array
+    const frontFaceDealer = dealerCard.querySelector('.card-front-black, .card-front-red');
+    const rankDealer = frontFace.dataset.rank;
+    dealerSum += getValue(rankDealer);
+    console.log("Dealer Sum:", dealerSum);
     dealerHand.appendChild(dealerCard); // Add the card to the dealer's hand
   }
 }
 
-function getValue(rank){
-  return 0;
+function getValue(val){
+  if(val == "A"){
+    if((playerSum + 11) > 21){
+      return 1;
+    }
+    else{
+      return 11;
+    }
+  }
+  else if(val == ("J" || "Q" || "K")){
+    return 10;
+  }
+  else{
+    return parseInt(val)
+  }
 }
 
 });
