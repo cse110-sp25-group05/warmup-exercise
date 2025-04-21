@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-const deckContainer = document.getElementById("deck-container");
 const dealerHand = document.getElementById('dealer-cards');
 const playerHand = document.getElementById('player-cards');
 const shuffleButton = document.getElementById("shuffle-button");
@@ -8,7 +7,6 @@ const hitButton = document.getElementById("hit-button");
 const standButton = document.getElementById("stand-button");
 const result = document.getElementById("results")
 
-
 // Global vars to track player/dealer sum & cards
 var dealerSum = 0;
 var playerSum = 0;
@@ -16,19 +14,7 @@ let cards = [];
 
 // Allows player to hit while playerSum < 21
 var canHit = true;
-var message
-
-// Load cards from cards.html
-fetch('deck.html')
-  .then(response => response.text())
-  .then(html => {
-    const temp = document.createElement('div');
-    temp.innerHTML = html;
-
-    cards = Array.from(temp.querySelectorAll('.card'));
-  })
-  .catch(error => console.error('Error loading cards:', error));
-
+var message;
 
 window.onload = function(){
   shuffleArray(cards);
@@ -44,6 +30,11 @@ cards.forEach((card) => {
 // Shuffle functionality
 shuffleButton.addEventListener("click", () => {
   shuffleArray(cards); // Shuffle the array
+  const deckContainer = document.getElementById("deck-container"); // Get the deck container
+  deckContainer.innerHTML = ""; // Clear the container
+  cards.forEach((card) => deckContainer.appendChild(card)); // Re-append cards in shuffled order
+  //const cardArray = Array.from(deckContainer.children); // Get all cards as an array
+  //cardArray.forEach((card) => deckContainer.appendChild(card)); // Re-append cards in shuffled order
 });
 
 // New Game Functionality
@@ -69,7 +60,7 @@ function startGame(){
   // Reset Card Containers
   dealerHand.innerHTML = '';
   playerHand.innerHTML = '';
-  ocument.getElementById("dealer-sum").innerText = '';
+  document.getElementById("dealer-sum").innerText = '';
   document.getElementById("player-sum").innerText = '';
   result.innerHTML = '';
 
@@ -77,6 +68,16 @@ function startGame(){
   playerSum = 0;
   dealerSum = 0;
   canHit = true;
+
+  // Load cards from cards.html
+  fetch('deck.html')
+    .then(response => response.text())
+    .then(html => {
+    const temp = document.createElement('div');
+    temp.innerHTML = html;
+    cards = Array.from(temp.querySelectorAll('.card'));
+  })
+    .catch(error => console.error('Error loading cards:', error));
 
   shuffleArray(cards);
   
