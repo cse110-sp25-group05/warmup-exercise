@@ -174,20 +174,62 @@ function getValue(val, sum){
       return 11;
     }
   }
-  
+
   // money tracking demo
   const standButton = document.getElementById("stand-button");
   const playerBank = document.getElementById("player-bank");
-  
+
   if (standButton && playerBank) {
     standButton.addEventListener("click", () => {
       // demo a win/loss
       const win = Math.random() > 0.5;
-      
+
       if (win) {
-        playerBank.shadowRoot.querySelector('#win-button').click();
+        playerBank.shadowRoot.querySelector("#win-button").click();
       } else {
-        playerBank.shadowRoot.querySelector('#lose-button').click();
+        playerBank.shadowRoot.querySelector("#lose-button").click();
+      }
+    });
+  }
+
+  // new game button handler
+  if (newGameButton) {
+    newGameButton.addEventListener("click", () => {
+      // reset all values and reshuffle deck for a new game
+      alert("Starting new game - resetting values and reshuffling deck");
+
+      // clear player and dealer hands
+      const playerHand = document.querySelector("#player-hand > div");
+      const dealerHand = document.querySelector("#dealer-hand > div");
+
+      // keep only the h2 heading in each hand
+      while (playerHand.children.length > 1) {
+        playerHand.removeChild(playerHand.lastChild);
+      }
+
+      while (dealerHand.children.length > 1) {
+        dealerHand.removeChild(dealerHand.lastChild);
+      }
+
+      // shuffle the deck if it exists
+      if (deckContainer && deckContainer.children.length > 0) {
+        const cardArray = Array.from(deckContainer.children);
+        shuffleArray(cardArray);
+        cardArray.forEach((card) => deckContainer.appendChild(card));
+      }
+    });
+  }
+
+  // reset Deck button handler
+  if (resetDeckButton) {
+    resetDeckButton.addEventListener("click", () => {
+      alert("Resetting and reshuffling deck");
+
+      // just shuffle the current deck
+      if (deckContainer && deckContainer.children.length > 0) {
+        const cardArray = Array.from(deckContainer.children);
+        shuffleArray(cardArray);
+        cardArray.forEach((card) => deckContainer.appendChild(card));
       }
     });
   }
