@@ -174,7 +174,17 @@ function getValue(val, sum){
       return 11;
     }
   }
-  
+
+  /* Face cards ------------------------------------------------------- */
+  if (val === "J" || val === "Q" || val === "K" || val === "10") 
+  {
+    return 10;
+  }
+
+  /* Number cards (2 – 9) -------------------------------------------- */
+  const n = parseInt(val, 10);
+  if (!isNaN(n)) return n;
+
   // money tracking demo
   const standButton = document.getElementById("stand-button");
   const playerBank = document.getElementById("player-bank");
