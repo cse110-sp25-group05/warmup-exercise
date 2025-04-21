@@ -36,36 +36,29 @@ section#deck-container {
   gap: 20px;
 }
 
-#controls {
+/* player bank styles */
+#player-bank-container {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-top: 2rem;
+  margin: 20px 0;
 }
 
-#controls button {
-  padding: 0.5rem 1rem;
-  background-color: #1a1e3b;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: var(--main-font, sans-serif);
-  font-weight: 600;
-  transition: background-color 0.3s ease;
+/* Style for the shuffle button */
+#shuffle-button {
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  padding: 0.5rem 10rem; /* Add padding */
+  font-size: 1rem; /* Set font size */
+  font-family: var(--main-font, sans-serif); /* Use main font */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+  margin-bottom: 1rem; 
 }
 
-#controls button:hover {
-  background-color: #33395c;
-}
-
-#controls button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
-}
-
-#new-game-button {
-  background-color: #2e7d32 !important;
+#shuffle-button:hover {
+  background-color: #45a049; /* Darker green on hover */
 }
 
 #new-game-button:hover {
@@ -84,4 +77,7 @@ div#dealer-cards, div#player-cards {
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  
+#shuffle-button:active {
+  background-color: #3e8e41; /* Even darker green when clicked */
 }
