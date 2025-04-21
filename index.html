@@ -8,15 +8,12 @@
     <title>Blackjack Card Widget</title>
   </head>
   <body>
-    <h1>Blackjack Demo</h1>
-
-    <div class="game-container">
-      <section id="dealer-hand">
-        <!-- Cards will be added here -->
-        <div>
-          <h2>Dealer Hand</h2>
-          <div class="card-front" data-rank="1" data-suit="spades"></div>
-          <div class="card-front" data-rank="1" data-suit="spades"></div>
+    <section id="dealer-hand">
+      <!-- Cards will be added here -->
+      <div>
+        <h2>Dealer: <span id="dealer-sum"></span></h2>
+        <div id="dealer-cards">
+          <div id="hidden"></div>
         </div>
       </div>
     </section>
@@ -24,7 +21,7 @@
     <section id="player-hand">
       <!-- Cards will be added here -->
       <div>
-        <h2>Player<span id="player-sum"></span></h2>
+        <h2>Player: <span id="player-sum"></span></h2>
         <div id="player-cards"></div>
       </div>
     </section>
@@ -142,7 +139,6 @@
     <section id="controls">
       <button id="new-game-button">New Game</button>
       <button id="reset-deck-button">Reset Deck</button>
-      <button id="deal-button">Deal</button>
       <button id="hit-button">Hit</button>
       <button id="stand-button">Stand</button>
       <button id="shuffle-button">Shuffle</button>

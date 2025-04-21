@@ -1,24 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
-const cards2 = document.querySelectorAll(".card");
 const deckContainer = document.getElementById("deck-container");
+const dealerHand = document.getElementById('dealer-cards');
+const playerHand = document.getElementById('player-cards');
 const shuffleButton = document.getElementById("shuffle-button");
 const newGameButton = document.getElementById("new-game-button");
+const hitButton = document.getElementById("hit-button");
+const standButton = document.getElementById("stand-button");
+const result = document.getElementById("results")
 
-// Global vars to track player/dealer sum
+
+// Global vars to track player/dealer sum & cards
 var dealerSum = 0;
 var playerSum = 0;
+let cards = [];
+
 
 // Global vars to track player/dealer ace amnt
 var dealerAce = 0;
 var playerAce = 0;
 
-
-var hidden;
-var deck;
-let cards = [];
-
 // Allows player to hit while playerSum < 21
 var canHit = true;
+var message
 
 // Load cards from cards.html
 fetch('deck.html')
@@ -31,6 +34,10 @@ fetch('deck.html')
   })
   .catch(error => console.error('Error loading cards:', error));
 
+
+window.onload = function(){
+  shuffleArray(cards);
+}
 
 // Flip functionality
 cards.forEach((card) => {
@@ -47,6 +54,13 @@ shuffleButton.addEventListener("click", () => {
 // New Game Functionality
 newGameButton.addEventListener("click", startGame);
 
+// Hit Functionality
+hitButton.addEventListener("click", hit);
+
+// Stand Functionality
+standButton.addEventListener("click", stand);
+
+
 // Fisher-Yates Shuffle Algorithm
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -55,102 +69,40 @@ function shuffleArray(array) {
   }
 }
 
-window.onload = function(){
-  shuffleArray(cards);
-}
-
 
 function startGame(){
   // Reset Card Containers
-  const dealerHand = document.getElementById('dealer-cards');
-  const playerHand = document.getElementById('player-cards');
   dealerHand.innerHTML = '';
   playerHand.innerHTML = '';
+  result.innerHTML = '';
 
   // Reset scores
   playerSum = 0;
   dealerSum = 0;
+  canHit = true;
 
   shuffleArray(cards);
-
-  for (let i = 0; i < 2; i++) {
-    // Deal a card to the dealer
-    const dealerCard = cards.pop(); // Pop the card from the array
-    const frontFaceDealer = dealerCard.querySelector('.card-front-black, .card-front-red');
-    const rankDealer = frontFaceDealer.dataset.rank;
-    console.log("Player Card Rank:", rankDealer);
-    dealerSum += getValue(rankDealer);
-    console.log("Dealer Sum:", dealerSum);
-    dealerHand.appendChild(dealerCard); // Add the card to the dealer's hand
-
-    // Deal a card to the player
-    const playerCard = cards.pop(); // Pop the card from the array
-    const frontFace = playerCard.querySelector('.card-front-black, .card-front-red');
-    const rank = frontFace.dataset.rank;
-    console.log("Player Card Rank:", rank);
-    playerSum += getValue(rank);
-    console.log("Player Sum:", playerSum);
-    playerHand.appendChild(playerCard); // Add the card to the player's hand
-
-  }
-}
-
-function startGame(){
-  // Reset Card Containers
-  const dealerHand = document.getElementById('dealer-cards');
-  const playerHand = document.getElementById('player-cards');
-  dealerHand.innerHTML = '';
-  playerHand.innerHTML = '';
-
-  // Reset scores
-  playerSum = 0;
-  dealerSum = 0;
-
-  shuffleArray(cards);
-
-  for (let i = 0; i < 2; i++) {
-    // Deal a card to the dealer
-    const dealerCard = cards.pop(); // Pop the card from the array
-    const frontFaceDealer = dealerCard.querySelector('.card-front-black, .card-front-red');
-    const rankDealer = frontFaceDealer.dataset.rank;
-    console.log("Player Card Rank:", rankDealer);
-    dealerSum += getValue(rankDealer);
-    console.log("Dealer Sum:", dealerSum);
-    dealerHand.appendChild(dealerCard); // Add the card to the dealer's hand
-
-    // Deal a card to the player
-    const playerCard = cards.pop(); // Pop the card from the array
-    const frontFace = playerCard.querySelector('.card-front-black, .card-front-red');
-    const rank = frontFace.dataset.rank;
-    console.log("Player Card Rank:", rank);
-    playerSum += getValue(rank);
-    console.log("Player Sum:", playerSum);
-    playerHand.appendChild(playerCard); // Add the card to the player's hand
-
-  }
-}
-function startGame(){
-  // Reset Card Containers
-  const dealerHand = document.getElementById('dealer-cards');
-  const playerHand = document.getElementById('player-cards');
-  dealerHand.innerHTML = '';
-  playerHand.innerHTML = '';
-
-  // Reset scores
-  playerSum = 0;
-  dealerSum = 0;
-
-  shuffleArray(cards);
+  
+  const hidden = cards.pop();
+  const frontFaceDealer1 = hidden.querySelector('.card-front-black, .card-front-red');
+  const rankDealer1 = frontFaceDealer1.dataset.rank;
+  console.log("Dealer Card Rank:", rankDealer1);
+  dealerSum += getValue(rankDealer1, dealerSum);
+  console.log("Dealer Sum:", dealerSum);
+  hidden.classList.add('flipped');
+  hidden.id = 'hidden-dealer-card';
+  dealerHand.appendChild(hidden);
 
   while(dealerSum < 17){
     const dealerCard = cards.pop(); // Pop the card from the array
     const frontFaceDealer = dealerCard.querySelector('.card-front-black, .card-front-red');
     const rankDealer = frontFaceDealer.dataset.rank;
     console.log("Dealer Card Rank:", rankDealer);
-    dealerSum += getValue(rankDealer, dealerSum);
+    dealerSum += getValue(rankDealer);
     console.log("Dealer Sum:", dealerSum);
     dealerHand.appendChild(dealerCard); // Add the card to the dealer's hand
-  }
+    }
+
 
   for (let i = 0; i < 2; i++) {
     // Deal a card to the player
@@ -158,10 +110,9 @@ function startGame(){
     const frontFace = playerCard.querySelector('.card-front-black, .card-front-red');
     const rank = frontFace.dataset.rank;
     console.log("Player Card Rank:", rank);
-    playerSum += getValue(rank, playerSum);
+    playerSum += getValue(rank);
     console.log("Player Sum:", playerSum);
     playerHand.appendChild(playerCard); // Add the card to the player's hand
-
   }
 }
 
@@ -174,23 +125,57 @@ function getValue(val, sum){
       return 11;
     }
   }
+  else if (val === "J" || val === "Q" || val === "K") {
+    return 10;
+  }
+  else{
+    return parseInt(val);
+  }
+}
   
-  // money tracking demo
-  const standButton = document.getElementById("stand-button");
-  const playerBank = document.getElementById("player-bank");
+function hit(){
+  if(!canHit){
+    return;
+  }
+
+  const playerCard = cards.pop(); // Pop the card from the array
+  const frontFace = playerCard.querySelector('.card-front-black, .card-front-red');
+  const rank = frontFace.dataset.rank;
+  console.log("Player Card Rank:", rank);
+  playerSum += getValue(rank);
+  console.log("Player Sum:", playerSum);
+  playerHand.appendChild(playerCard); // Add the card to the player's hand
   
-  if (standButton && playerBank) {
-    standButton.addEventListener("click", () => {
-      // demo a win/loss
-      const win = Math.random() > 0.5;
-      
-      if (win) {
-        playerBank.shadowRoot.querySelector('#win-button').click();
-      } else {
-        playerBank.shadowRoot.querySelector('#lose-button').click();
-      }
-    });
+
+  if(playerSum > 21){
+    canHit = false;
   }
 }
 
+function stand(){
+  canHit = false;
+  const hidden = document.getElementById('hidden-dealer-card');
+  hidden.classList.remove('flipped');
+
+  if(playerSum > 21){
+    message = "You lose!";
+  }
+  else if (dealerSum > 21){
+    message = "You win!";
+  }
+  else if(playerSum === dealerSum){
+    message = "Tie!";
+  }
+  else if(playerSum > dealerSum){
+    message = "You win!";
+  }
+  else if(dealerSum > playerSum){
+   message = "You lose!";
+  }
+
+  result.innerHTML = message;
+  document.getElementById("dealer-sum").innerText = dealerSum;
+  document.getElementById("player-sum").innerText = playerSum;
+
+}
 });
