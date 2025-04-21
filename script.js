@@ -74,6 +74,8 @@ function startGame(){
   // Reset Card Containers
   dealerHand.innerHTML = '';
   playerHand.innerHTML = '';
+  ocument.getElementById("dealer-sum").innerText = '';
+  document.getElementById("player-sum").innerText = '';
   result.innerHTML = '';
 
   // Reset scores
