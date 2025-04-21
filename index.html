@@ -11,12 +11,6 @@
     <h1>Blackjack Demo</h1>
 
     <div class="game-container">
-      <section id="deck-container">
-        <!--JS team-->
-        <div class="card" data-rank="A" data-suit="spades">🂡</div>
-        <div class="card" data-rank="K" data-suit="hearts">🂾</div>
-      </section>
-
       <section id="dealer-hand">
         <!-- Cards will be added here -->
         <div>
@@ -128,14 +122,13 @@
           </div>
         </div>
         <div class="card-front" data-rank="1" data-suit="diamond"></div>
-      </section>
-
-      <section id="player-bank-container">
+      <!-- </section> -->
+    </div>
+    <div>
+        <section id="player-bank-container">
         <!-- player bank component for money and bets -->
-        <player-bank id="player-bank"></player-bank>
-      </section>
-
-
+          <player-bank id="player-bank"></player-bank>
+        </section>
     <section id="controls">
       <button id="new-game-button">New Game</button>
       <button id="reset-deck-button">Reset Deck</button>
@@ -143,6 +136,8 @@
       <button id="hit-button">Hit</button>
       <button id="stand-button">Stand</button>
     </section>
+    </div>
+
 
     <script src="./player-bank.js"></script>
     <script src="./script.js" type="module"></script>
