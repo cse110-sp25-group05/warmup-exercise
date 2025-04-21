@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-const deckContainer = document.getElementById("deck-container");
 const dealerHand = document.getElementById('dealer-cards');
 const playerHand = document.getElementById('player-cards');
 const shuffleButton = document.getElementById("shuffle-button");
@@ -7,7 +6,6 @@ const newGameButton = document.getElementById("new-game-button");
 const hitButton = document.getElementById("hit-button");
 const standButton = document.getElementById("stand-button");
 const result = document.getElementById("results")
-
 
 // Global vars to track player/dealer sum & cards
 var dealerSum = 0;
@@ -29,7 +27,6 @@ fetch('deck.html')
   })
   .catch(error => console.error('Error loading cards:', error));
 
-
 window.onload = function(){
   shuffleArray(cards);
 }
@@ -44,6 +41,11 @@ cards.forEach((card) => {
 // Shuffle functionality
 shuffleButton.addEventListener("click", () => {
   shuffleArray(cards); // Shuffle the array
+  const deckContainer = document.getElementById("deck-container"); // Get the deck container
+  deckContainer.innerHTML = ""; // Clear the container
+  cards.forEach((card) => deckContainer.appendChild(card)); // Re-append cards in shuffled order
+  //const cardArray = Array.from(deckContainer.children); // Get all cards as an array
+  //cardArray.forEach((card) => deckContainer.appendChild(card)); // Re-append cards in shuffled order
 });
 
 // New Game Functionality
@@ -77,6 +79,16 @@ function startGame(){
   playerSum = 0;
   dealerSum = 0;
   canHit = true;
+
+  // Load cards from cards.html
+  fetch('deck.html')
+    .then(response => response.text())
+    .then(html => {
+    const temp = document.createElement('div');
+    temp.innerHTML = html;
+    cards = Array.from(temp.querySelectorAll('.card'));
+  })
+    .catch(error => console.error('Error loading cards:', error));
 
   shuffleArray(cards);
   
