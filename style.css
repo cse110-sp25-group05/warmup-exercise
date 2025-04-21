@@ -44,7 +44,7 @@ section#deck-container {
 }
 
 /* Style for the shuffle button */
-#shuffle-button {
+#card-deck #shuffle-button {
   background-color: #4caf50; /* Green background */
   color: white; /* White text */
   border: none; /* Remove border */
@@ -57,7 +57,7 @@ section#deck-container {
   margin-bottom: 1rem;
 }
 
-#shuffle-button:hover {
+#card-deck #shuffle-button:hover {
   background-color: #45a049; /* Darker green on hover */
 }
 
@@ -73,11 +73,13 @@ section#deck-container {
   background-color: #e53935 !important;
 }
 
-div#dealer-cards, div#player-cards {
+div#dealer-cards,
+div#player-cards {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  
+}
+
 #shuffle-button:active {
   background-color: #3e8e41; /* Even darker green when clicked */
 }
