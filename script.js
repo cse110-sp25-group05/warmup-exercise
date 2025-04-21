@@ -115,11 +115,22 @@ function getValue(val, sum){
       return 11;
     }
   }
-  else if(val === "J" || val === "Q" || val === "K"){
-    return 10;
-  }
-  else{
-    return parseInt(val)
+  
+  // money tracking demo
+  const standButton = document.getElementById("stand-button");
+  const playerBank = document.getElementById("player-bank");
+  
+  if (standButton && playerBank) {
+    standButton.addEventListener("click", () => {
+      // demo a win/loss
+      const win = Math.random() > 0.5;
+      
+      if (win) {
+        playerBank.shadowRoot.querySelector('#win-button').click();
+      } else {
+        playerBank.shadowRoot.querySelector('#lose-button').click();
+      }
+    });
   }
 }
 
