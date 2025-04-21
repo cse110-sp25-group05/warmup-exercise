@@ -61,6 +61,23 @@ section#deck-container {
   background-color: #45a049; /* Darker green on hover */
 }
 
+#new-game-button:hover {
+  background-color: #388e3c !important;
+}
+
+#reset-deck-button {
+  background-color: #d32f2f !important;
+}
+
+#reset-deck-button:hover {
+  background-color: #e53935 !important;
+}
+
+div#dealer-cards, div#player-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  
 #shuffle-button:active {
   background-color: #3e8e41; /* Even darker green when clicked */
 }
