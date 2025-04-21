@@ -6,6 +6,7 @@ const shuffleButton = document.getElementById("shuffle-button");
 const newGameButton = document.getElementById("new-game-button");
 const hitButton = document.getElementById("hit-button");
 const standButton = document.getElementById("stand-button");
+const result = document.getElementById("results")
 
 
 // Global vars to track player/dealer sum & cards
@@ -20,6 +21,7 @@ var playerAce = 0;
 
 // Allows player to hit while playerSum < 21
 var canHit = true;
+var message
 
 // Load cards from cards.html
 fetch('deck.html')
@@ -53,7 +55,10 @@ shuffleButton.addEventListener("click", () => {
 newGameButton.addEventListener("click", startGame);
 
 // Hit Functionality
-hitButton.addEventListener("click", hit)
+hitButton.addEventListener("click", hit);
+
+// Stand Functionality
+standButton.addEventListener("click", stand);
 
 
 // Fisher-Yates Shuffle Algorithm
@@ -69,10 +74,12 @@ function startGame(){
   // Reset Card Containers
   dealerHand.innerHTML = '';
   playerHand.innerHTML = '';
+  result.innerHTML = '';
 
   // Reset scores
   playerSum = 0;
   dealerSum = 0;
+  canHit = true;
 
   shuffleArray(cards);
   
@@ -80,19 +87,22 @@ function startGame(){
   const frontFaceDealer1 = hidden.querySelector('.card-front-black, .card-front-red');
   const rankDealer1 = frontFaceDealer1.dataset.rank;
   console.log("Dealer Card Rank:", rankDealer1);
-  dealerSum += getValue(rankDealer1);
+  dealerSum += getValue(rankDealer1, dealerSum);
   console.log("Dealer Sum:", dealerSum);
-  hidden.classList.add('flipped'); // This makes it show the back
+  hidden.classList.add('flipped');
+  hidden.id = 'hidden-dealer-card';
   dealerHand.appendChild(hidden);
 
-  // Deal a card to the dealer
-  const dealerCard = cards.pop(); // Pop the card from the array
-  const frontFaceDealer = dealerCard.querySelector('.card-front-black, .card-front-red');
-  const rankDealer = frontFaceDealer.dataset.rank;
-  console.log("Dealer Card Rank:", rankDealer);
-  dealerSum += getValue(rankDealer);
-  console.log("Dealer Sum:", dealerSum);
-  dealerHand.appendChild(dealerCard); // Add the card to the dealer's hand
+  while(dealerSum < 17){
+    const dealerCard = cards.pop(); // Pop the card from the array
+    const frontFaceDealer = dealerCard.querySelector('.card-front-black, .card-front-red');
+    const rankDealer = frontFaceDealer.dataset.rank;
+    console.log("Dealer Card Rank:", rankDealer);
+    dealerSum += getValue(rankDealer);
+    console.log("Dealer Sum:", dealerSum);
+    dealerHand.appendChild(dealerCard); // Add the card to the dealer's hand
+    }
+
 
   for (let i = 0; i < 2; i++) {
     // Deal a card to the player
@@ -115,25 +125,14 @@ function getValue(val, sum){
       return 11;
     }
   }
-  
-  // money tracking demo
-  const standButton = document.getElementById("stand-button");
-  const playerBank = document.getElementById("player-bank");
-  
-  if (standButton && playerBank) {
-    standButton.addEventListener("click", () => {
-      // demo a win/loss
-      const win = Math.random() > 0.5;
-      
-      if (win) {
-        playerBank.shadowRoot.querySelector('#win-button').click();
-      } else {
-        playerBank.shadowRoot.querySelector('#lose-button').click();
-      }
-    });
+  else if (val === "J" || val === "Q" || val === "K") {
+    return 10;
+  }
+  else{
+    return parseInt(val);
   }
 }
-
+  
 function hit(){
   if(!canHit){
     return;
@@ -146,6 +145,37 @@ function hit(){
   playerSum += getValue(rank);
   console.log("Player Sum:", playerSum);
   playerHand.appendChild(playerCard); // Add the card to the player's hand
+  
+
+  if(playerSum > 21){
+    canHit = false;
+  }
 }
 
+function stand(){
+  canHit = false;
+  const hidden = document.getElementById('hidden-dealer-card');
+  hidden.classList.remove('flipped');
+
+  if(playerSum > 21){
+    message = "You lose!";
+  }
+  else if (dealerSum > 21){
+    message = "You win!";
+  }
+  else if(playerSum === dealerSum){
+    message = "Tie!";
+  }
+  else if(playerSum > dealerSum){
+    message = "You win!";
+  }
+  else if(dealerSum > playerSum){
+   message = "You lose!";
+  }
+
+  result.innerHTML = message;
+  document.getElementById("dealer-sum").innerText = dealerSum;
+  document.getElementById("player-sum").innerText = playerSum;
+
+}
 });
