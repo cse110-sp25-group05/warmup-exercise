@@ -14,14 +14,9 @@ var dealerSum = 0;
 var playerSum = 0;
 let cards = [];
 
-
-// Global vars to track player/dealer ace amnt
-var dealerAce = 0;
-var playerAce = 0;
-
 // Allows player to hit while playerSum < 21
 var canHit = true;
-var message
+var message;
 
 // Load cards from cards.html
 fetch('deck.html')
@@ -74,6 +69,8 @@ function startGame(){
   // Reset Card Containers
   dealerHand.innerHTML = '';
   playerHand.innerHTML = '';
+  document.getElementById("dealer-sum").innerText = '';
+  document.getElementById("player-sum").innerText = '';
   result.innerHTML = '';
 
   // Reset scores
