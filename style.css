@@ -35,3 +35,22 @@ section#deck-container {
   justify-content: center;
   gap: 20px;
 }
+
+.shuffle-button {
+  background-color: #078248; 
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.shuffle-button:hover {
+  background-color: #0b832f; 
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 10px 24px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
