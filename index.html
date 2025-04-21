@@ -5,44 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="card.css" />
     <link rel="stylesheet" href="style.css" />
-    <title>Blackjack Card Widget</title>
+    <title>Blackjack Card Game</title>
   </head>
   <body>
-    <section id="dealer-hand">
-      <!-- Cards will be added here -->
-      <div>
-        <h2>Dealer: <span id="dealer-sum"></span></h2>
-        <div id="dealer-cards">
-          <div id="hidden"></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="player-hand">
-      <!-- Cards will be added here -->
-      <div>
-        <h2>Player: <span id="player-sum"></span></h2>
-        <div id="player-cards"></div>
-      </div>
-    </section>
+    <h1>Blackjack</h1>
     
-      <section id="player-bank-container">
-        <!-- player bank component for money and bets -->
-        <player-bank id="player-bank"></player-bank>
+    <main>
+      <section id="controls">
+        <div class="control-button-container">
+          <button id="new-game-button">NEW GAME</button>
+          <button id="reset-deck-button">RESET GAME</button>
+        </div>
+        
+        <!-- sound control button -->
+        <div class="sound-control">
+          <button id="sound-toggle" class="sound-button">
+            <span id="sound-icon">🔊</span> SOUND
+          </button>
+        </div>
       </section>
 
+      <section class="game-area">
+        <div id="dealer-hand">
+          <div class="hand-label">Dealer: <span id="dealer-sum"></span></div>
+          <div id="dealer-cards"></div>
+        </div>
 
-    <section id="controls">
-      <button id="new-game-button">New Game</button>
-      <button id="reset-deck-button">Reset Deck</button>
-      <button id="hit-button">Hit</button>
-      <button id="stand-button">Stand</button>
-      <button id="shuffle-button" style="display: none;">Shuffle</button>
-      <p id="results"></p>
-    </section>
+        <div id="player-hand">
+          <div class="hand-label">Player: <span id="player-sum"></span></div>
+          <div id="player-cards"></div>
+        </div>
+      </section>
+    
+      <section id="player-bank-container">
+        <player-bank id="player-bank"></player-bank>
+        
+        <div id="game-actions">
+          <button id="hit-button">HIT</button>
+          <button id="stand-button">STAND</button>
+        </div>
+      </section>
+    </main>
+    
+    <footer>
+      <p>Blackjack Web Component | CSE 110 - Warmup Exercise</p>
+    </footer>
 
+    <!-- sound management script -->
+    <script src="./assets/sounds.js"></script>
     <script src="./player-bank.js"></script>
-    <script src="./script.js" type="module"></script>
-
+    <script src="./script.js"></script>
+    
+    <!-- sound control script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const soundToggle = document.getElementById('sound-toggle');
+        const soundIcon = document.getElementById('sound-icon');
+        
+        // toggle sound on button click
+        soundToggle.addEventListener('click', function() {
+          if (window.soundManager) {
+            const isMuted = window.soundManager.toggleMute();
+            soundIcon.textContent = isMuted ? '🔇' : '🔊';
+          }
+        });
+        
+        // check sound status when page loads
+        if (window.soundManager && window.soundManager.muted) {
+          soundIcon.textContent = '🔇';
+        }
+      });
+    </script>
   </body>
 </html>
