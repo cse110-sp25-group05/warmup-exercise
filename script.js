@@ -16,6 +16,17 @@ let cards = [];
 var canHit = true;
 var message;
 
+// Load cards from cards.html
+fetch('deck.html')
+  .then(response => response.text())
+  .then(html => {
+    const temp = document.createElement('div');
+    temp.innerHTML = html;
+
+    cards = Array.from(temp.querySelectorAll('.card'));
+  })
+  .catch(error => console.error('Error loading cards:', error));
+
 window.onload = function(){
   shuffleArray(cards);
 }
