@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "jsdom": "^26.1.0"
+  }
+}

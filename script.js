@@ -522,16 +522,6 @@ function checkForBlackjack() {
     showFinalScores();
     return true;
   }
-  return false;
-}
-
-// Game over - determine winner
-function gameOver() {
-  gameInProgress = false;
-  
-  // Disable hit and stand buttons
-  hitButton.disabled = true;
-  standButton.disabled = true;
   
   // Update the scores
   document.getElementById("dealer-sum").innerText = dealerSum;
