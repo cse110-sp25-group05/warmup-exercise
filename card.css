@@ -1,5 +1,7 @@
 .card {
   perspective: 1000px;
+  display: inline-block;
+  margin: 5px;
 }
 
 .card-inner {
@@ -12,23 +14,23 @@
 
 .card-front-black,
 .card-back, .card-front-red {
-  /* Layout */
+  /* layout */
   display: flex;
-  aspect-ratio: 5 / 7;
+  aspect-ratio: 2.5 / 3.5;
   width: auto;
-  height: 20rem;
-  padding: 0.5rem;
+  height: 10rem;
+  padding: 0.3rem;
   flex-direction: column;
   align-items: flex-start;
-  gap: 3.75rem 0rem;
+  gap: 0;
   backface-visibility: hidden;
 
   justify-content: space-between;
 
-  /* Styling */
-  border-radius: 10px;
-  background: linear-gradient(180deg, #faf9f6 0%, #e4e4e4 100%);
-  box-shadow: 6.724px 7.732px 10.086px 0px rgba(0, 0, 0, 0.25);
+  /* styling */
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .card-back {
@@ -53,10 +55,8 @@
 }
 
 .card-front-black > div {
-  color: #1a1e3b;
+  color: #000000;
 }
-
-
 
 .card-front-red > div {
   color: #d32f2f;
@@ -64,24 +64,20 @@
 
 .card-front-top {
   display: flex;
-  align-items: center;
-  gap: 3.362px;
+  padding: 0;
   align-self: stretch;
+  height: 1.5rem;
+  position: relative;
+}
 
-  text-align: center;
-  font-family: Inter;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-
-  .card-front-top > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 3.362px;
-  }
+.card-front-top > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .card-front-middle {
@@ -89,43 +85,78 @@
   justify-content: center;
   align-items: center;
   align-self: stretch;
+  flex: 1;
+  position: relative;
 }
 
 .card-front-bottom {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-end;
   align-self: stretch;
-
-  color: #1a1e3b;
-  text-align: center;
-  font-family: Inter;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+  height: 1.5rem;
+  position: relative;
 }
 
 .card-front-bottom > div {
   transform: rotate(180deg);
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
+/* fix rank display */
 .card-rank {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  align-self: stretch;
+  font-size: 1.2rem;
+  line-height: 1;
+  font-weight: bold;
+  display: block;
+  font-family: 'Arial', sans-serif;
 }
 
+/* fix suit display */
 .card-suit {
-  width: auto;
-  height: auto;
-  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  margin-top: -0.1rem;
+}
 
-  fill: var(
-    --black-gradient,
-    linear-gradient(180deg, #212121 52.88%, #878787 100%)
-  );
+/* center suit in middle of card */
+.card-front-middle svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* add styles to control SVG size */
+.card-front-top svg,
+.card-front-bottom svg {
+  width: 0.9rem;
+  height: 1.1rem;
+  display: block;
+  margin-top: -0.1rem;
+}
+
+/* make hearts and diamonds red */
+.card-front-red svg path {
+  fill: #d32f2f;
+}
+
+/* make clubs and spades black */
+.card-front-black svg path {
+  fill: #000000;
+}
+
+/* fix container sizing */
+.card-front-top > div,
+.card-front-bottom > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
 }
